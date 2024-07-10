@@ -1,0 +1,141 @@
+/* style_about.css */
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Mengatur jenis font untuk seluruh halaman */
+    line-height: 1.6; /* Spasi garis ganda antara baris */
+    margin: 0; /* Menghilangkan margin luar pada body */
+    padding: 0; /* Menghilangkan padding pada body */
+    background-color: #fdf0f7; /* Warna latar belakang */
+    color: #333; /* Warna teks utama */
+}
+
+.container {
+    max-width: 1200px; /* Lebar maksimum kontainer */
+    margin: 0 auto; /* Posisi tengah secara horizontal */
+    padding: 20px; /* Ruang dalam kontainer */
+    background-color: #fff; /* Warna latar belakang kontainer */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan kotak tipis */
+    border-radius: 8px; /* Sudut melengkung */
+}
+
+/* Header Styles */
+header {
+    background-color: #f48fb1; /* Warna header */
+    padding: 20px 0; /* Padding atas/bawah */
+    text-align: center; /* Posisi teks ke tengah */
+    border-radius: 8px 8px 0 0; /* Sudut melengkung hanya pada atas */
+}
+
+.header-content h1 {
+    margin: 0; /* Menghilangkan margin atas/bawah pada judul */
+    font-size: 3em; /* Ukuran font judul */
+    color: #fff; /* Warna teks judul */
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Bayangan teks */
+}
+
+.header-content p {
+    font-size: 1.2em; /* Ukuran font paragraf */
+    color: #fff; /* Warna teks paragraf */
+}
+
+/* Main Content Styles */
+.about-section, .benefits-section {
+    margin-bottom: 30px; /* Ruang bawah antara bagian */
+}
+
+.about-section h2, .benefits-section h2 {
+    color: #f48fb1; /* Warna judul */
+    font-size: 2.5em; /* Ukuran font judul */
+    margin-top: 0; /* Menghilangkan margin atas pada judul */
+    padding-bottom: 10px; /* Ruang bawah judul */
+    border-bottom: 2px solid #f48fb1; /* Garis bawah */
+}
+
+.about-section p {
+    font-size: 1.2em; /* Ukuran font paragraf */
+    color: #666; /* Warna teks paragraf */
+    line-height: 1.8; /* Spasi garis ganda antara baris */
+}
+
+.benefits-section ul {
+    list-style-type: none; /* Menghilangkan gaya daftar bawaan */
+    padding-left: 0; /* Menghilangkan padding kiri pada daftar */
+}
+
+.benefits-section li {
+    font-size: 1.2em; /* Ukuran font elemen daftar */
+    color: #666; /* Warna teks elemen daftar */
+    line-height: 1.8; /* Spasi garis ganda antara baris */
+    margin-bottom: 10px; /* Ruang bawah antara elemen daftar */
+    position: relative; /* Posisi relatif */
+    padding-left: 20px; /* Ruang kiri */
+}
+
+.benefits-section li::before {
+    content: "\2022"; /* Simbol bullet */
+    color: #f48fb1; /* Warna bullet */
+    font-size: 1.5em; /* Ukuran font bullet */
+    position: absolute; /* Posisi absolut */
+    left: 0; /* Posisi ke kiri */
+    top: 3px; /* Posisi ke atas */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333; /* Warna latar belakang footer */
+    color: #fff; /* Warna teks footer */
+    text-align: center; /* Posisi teks ke tengah */
+    padding: 20px 0; /* Padding atas/bawah */
+    border-radius: 0 0 8px 8px; /* Sudut melengkung hanya pada bawah */
+}
+
+.footer-content p {
+    margin: 0; /* Menghilangkan margin atas/bawah pada paragraf */
+    font-size: 0.9em; /* Ukuran font paragraf */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Mengurangi ruang dalam kontainer pada layar kecil */
+    }
+
+    .header-content h1 {
+        font-size: 2.5em; /* Ukuran font judul pada layar kecil */
+    }
+
+    .header-content p {
+        font-size: 1em; /* Ukuran font paragraf pada layar kecil */
+    }
+
+    .about-section h2, .benefits-section h2 {
+        font-size: 2em; /* Ukuran font judul pada layar kecil */
+    }
+
+    .about-section p, .benefits-section li {
+        font-size: 1em; /* Ukuran font paragraf dan elemen daftar pada layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 5px; /* Mengurangi padding lebih lanjut pada layar sangat kecil */
+    }
+
+    .header-content h1 {
+        font-size: 2em; /* Ukuran font judul pada layar sangat kecil */
+    }
+
+    .header-content p {
+        font-size: 0.9em; /* Ukuran font paragraf pada layar sangat kecil */
+    }
+
+    .about-section h2, .benefits-section h2 {
+        font-size: 1.8em; /* Ukuran font judul pada layar sangat kecil */
+    }
+
+    .about-section p, .benefits-section li {
+        font-size: 0.9em; /* Ukuran font paragraf dan elemen daftar pada layar sangat kecil */
+    }
+}

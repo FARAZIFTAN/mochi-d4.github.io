@@ -1,0 +1,81 @@
+/* Reset CSS untuk menghilangkan margin dan padding default serta mengatur box-sizing dan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* style_produk.css */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 3px 5%;
+}
+
+.product-card {
+    background-color: #eef5df;
+    border: 1px solid #fff3f3;
+    border-radius: 5px;
+    width: 190px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgb(235, 230, 230);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.product-card h2 {
+    font-size: 1.5em;
+    color: #484444;
+    margin: 10px 0;
+}
+
+.product-card .btn {
+    padding: 10px 30px;
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 10px rgb(79, 78, 78);
+}
+
+/* Bagian Footer */
+footer {
+    text-align: center;
+    padding: 1em 0;
+    color: #fff;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 1;
+}
+
+/* Media queries untuk membuat situs responsif */
+@media (max-width: 768px) {
+    .product-container {
+        padding: 3px 10px; /* Mengurangi padding untuk lebih baik pada layar yang lebih kecil */
+    }
+
+    .product-card {
+        width: calc(50% - 20px); /* Menyusun produk dalam dua kolom */
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        width: 100%; /* Menyusun produk dalam satu kolom penuh */
+        margin: 10px 0;
+    }
+}

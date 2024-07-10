@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif; /* Mengatur jenis font untuk seluruh halaman */
+    background-color: #f0f2f5; /* Warna latar belakang */
+    display: flex; /* Menggunakan flexbox untuk tata letak */
+    justify-content: center; /* Posisi konten ke tengah secara horizontal */
+    align-items: center; /* Posisi konten ke tengah secara vertikal */
+    height: 100vh; /* Tinggi 100% dari viewport */
+    margin: 0; /* Menghilangkan margin luar pada body */
+}
+
+.login-container {
+    background-color: #ffffff; /* Warna latar belakang kontainer login */
+    padding: 20px 40px; /* Ruang dalam kontainer */
+    border-radius: 8px; /* Sudut melengkung */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan kotak tipis */
+    text-align: center; /* Posisi teks ke tengah */
+}
+
+h2 {
+    margin-bottom: 20px; /* Ruang bawah pada judul */
+    color: #333; /* Warna teks judul */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Ruang bawah antara grup formulir */
+    text-align: left; /* Posisi teks formulir ke kiri */
+}
+
+label {
+    display: block; /* Membuat label menjadi blok */
+    margin-bottom: 5px; /* Ruang bawah pada label */
+    color: #555; /* Warna teks label */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Lebar 100% dari kontainer */
+    padding: 10px; /* Ruang dalam input */
+    border: 1px solid #ccc; /* Garis tepi input */
+    border-radius: 4px; /* Sudut melengkung */
+    box-sizing: border-box; /* Box-sizing untuk menghitung border dan padding */
+}
+
+button {
+    width: 100%; /* Lebar 100% dari kontainer */
+    padding: 10px; /* Ruang dalam tombol */
+    background-color: #007bff; /* Warna latar belakang tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 4px; /* Sudut melengkung */
+    color: white; /* Warna teks tombol */
+    font-size: 16px; /* Ukuran font tombol */
+    cursor: pointer; /* Kursor menjadi tanda tangan saat diarahkan */
+}
+
+button:hover {
+    background-color: #0056b3; /* Warna latar belakang tombol saat dihover */
+}
+
+p {
+    margin-top: 20px; /* Ruang atas pada paragraf */
+    color: #555; /* Warna teks paragraf */
+}
+
+a {
+    color: #007bff; /* Warna teks tautan */
+    text-decoration: none; /* Menghilangkan dekorasi tautan */
+}
+
+a:hover {
+    text-decoration: underline; /* Garis bawah pada tautan saat dihover */
+}
