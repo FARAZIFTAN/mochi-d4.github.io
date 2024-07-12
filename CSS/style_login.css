@@ -44,7 +44,7 @@ input[type="password"] {
 button {
     width: 100%; /* Lebar 100% dari kontainer */
     padding: 10px; /* Ruang dalam tombol */
-    background-color: #007bff; /* Warna latar belakang tombol */
+    background-color: #f48fb1; /* Warna latar belakang tombol */
     border: none; /* Menghilangkan border */
     border-radius: 4px; /* Sudut melengkung */
     color: white; /* Warna teks tombol */
@@ -53,7 +53,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Warna latar belakang tombol saat dihover */
+    background-color: #f06292; /* Warna latar belakang tombol saat dihover */
 }
 
 p {
@@ -62,7 +62,7 @@ p {
 }
 
 a {
-    color: #007bff; /* Warna teks tautan */
+    color: #f48fb1; /* Warna teks tautan */
     text-decoration: none; /* Menghilangkan dekorasi tautan */
 }
 
