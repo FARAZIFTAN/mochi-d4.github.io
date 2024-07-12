@@ -15,7 +15,7 @@
         <img src="img/logooo.png" class="logo" /> <!-- Menampilkan logo situs -->
       </div>
       <ul class="nav-links">
-        <li><a href="index.php">Home</a></li> <!-- Link navigasi ke halaman utama -->
+        <li><a href="index.html">Home</a></li> <!-- Link navigasi ke halaman utama -->
         <li><a href="produk.php">Product</a></li> <!-- Link navigasi ke halaman produk -->
         <li><a href="about.html">About</a></li> <!-- Link navigasi ke halaman tentang -->
       </ul>
@@ -23,13 +23,6 @@
         <a href="proses_logout.php" class="logout-btn">
           <i class="fas fa-sign-out-alt"></i> <!-- Icon logout -->
         </a>
-        <?php
-        session_start(); // Memulai sesi PHP
-
-        if (!isset($_SESSION['username'])) { // Mengecek apakah variabel sesi 'username' sudah diset
-          // Jika tidak, tidak ada tindakan yang dilakukan
-        }
-        ?>
       </div>
     </nav>
     <div class="content"> <!-- Bagian konten utama -->

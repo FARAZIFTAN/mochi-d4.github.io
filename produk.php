@@ -24,7 +24,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                 <img src="img/logooo.png" class="logo" />
             </div>
             <ul class="nav-links">
-                <li><a href="index.php">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="produk.php">Product</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
