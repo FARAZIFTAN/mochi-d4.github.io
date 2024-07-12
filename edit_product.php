@@ -50,6 +50,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <style>
+        .btn-primary {
+            background-color: #f48fb1 !important;
+            border-color: #f48fb1 !important;
+        }
+
+        .btn-primary:hover {
+            background-color: #f06292 !important;
+            border-color: #f06292 !important;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(180deg, #f48fb1 10%, #f06292 100%) !important;
+        }
+
+        .text-gray-900 {
+            color: #333 !important;
+        }
+
+        .btn-primary:focus,
+        .btn-primary.focus {
+            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5) !important;
+        }
+
+        a {
+            color: #f48fb1 !important;
+        }
+
+        a:hover {
+            color: #f06292 !important;
+        }
+    </style>
 </head>
 
 <body class="bg-gradient-primary">
