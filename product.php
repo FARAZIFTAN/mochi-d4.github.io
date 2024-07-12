@@ -26,6 +26,52 @@ $result = $conn->query($sql);
     <script src="https://kit.fontawesome.com/4da832a0d0.js" crossorigin="anonymous"></script>
 
     <style>
+        /* Mengubah warna utama menjadi #f48fb1 */
+        .bg-gradient-primary {
+            background-color: #f48fb1 !important;
+            background-image: linear-gradient(180deg, #f48fb1 10%, #f48fb1 100%) !important;
+            background-size: cover !important;
+        }
+
+        .border-left-primary {
+            border-left: .25rem solid #f48fb1 !important;
+        }
+
+        .text-primary {
+            color: #f48fb1 !important;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #f48fb1;
+            border-color: #f48fb1;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #e57399;
+            border-color: #e57399;
+        }
+
+        .btn-primary:focus, .btn-primary.focus {
+            color: #fff;
+            background-color: #e57399;
+            border-color: #e57399;
+            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
+        }
+
+        .btn-primary:active, .btn-primary.active,
+        .show>.btn-primary.dropdown-toggle {
+            color: #fff;
+            background-color: #e57399;
+            border-color: #e57399;
+        }
+
+        .btn-primary:active:focus, .btn-primary.active:focus,
+        .show>.btn-primary.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
+        }
+
         /* CSS untuk produk sidebar */
         .sidebar-product-list {
             padding: 10px;
@@ -42,7 +88,7 @@ $result = $conn->query($sql);
         .sidebar-product-item .product-name {
             font-size: 14px;
             font-weight: 600;
-            color: #4e73df;
+            color: #f48fb1;
         }
 
         .sidebar-product-item .product-actions {
@@ -312,5 +358,3 @@ $result = $conn->query($sql);
 </body>
 
 </html>
-
-                            

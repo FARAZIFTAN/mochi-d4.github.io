@@ -54,6 +54,55 @@ $jumlah_user = $row_jumlah_user['jumlah_user'];
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4da832a0d0.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <style>
+        /* Mengubah warna utama menjadi #f48fb1 */
+        .bg-gradient-primary {
+            background-color: #f48fb1 !important;
+            background-image: linear-gradient(180deg, #f48fb1 10%, #f48fb1 100%) !important;
+            background-size: cover !important;
+        }
+
+        .border-left-primary {
+            border-left: .25rem solid #f48fb1 !important;
+        }
+
+        .text-primary {
+            color: #f48fb1 !important;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: #f48fb1;
+            border-color: #f48fb1;
+        }
+
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #e57399;
+            border-color: #e57399;
+        }
+
+        .btn-primary:focus, .btn-primary.focus {
+            color: #fff;
+            background-color: #e57399;
+            border-color: #e57399;
+            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
+        }
+
+        .btn-primary:active, .btn-primary.active,
+        .show>.btn-primary.dropdown-toggle {
+            color: #fff;
+            background-color: #e57399;
+            border-color: #e57399;
+        }
+
+        .btn-primary:active:focus, .btn-primary.active:focus,
+        .show>.btn-primary.dropdown-toggle:focus {
+            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -172,8 +221,7 @@ $jumlah_user = $row_jumlah_user['jumlah_user'];
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div
-                                                class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 PENDAPATAN</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800">Rp <?php echo number_format($pendapatan, 0, ',', '.'); ?></div>
                                         </div>
@@ -191,8 +239,7 @@ $jumlah_user = $row_jumlah_user['jumlah_user'];
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div
-                                                class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 JUMLAH PESANAN BARU</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_pesanan; ?> Pesanan</div>
                                         </div>
@@ -210,8 +257,7 @@ $jumlah_user = $row_jumlah_user['jumlah_user'];
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div
-                                                class="text-xs font-weight-bold text-info text-uppercase mb-1">JUMLAH PRODUK TERJUAL
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">JUMLAH PRODUK TERJUAL
                                             </div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $jumlah_produk_terjual; ?></div>
                                         </div>
