@@ -13,23 +13,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error); // Menampilkan pesan kesalahan jika koneksi gagal
 }
 
-    // Retrieve product data from database using prepared statement
-    $product_id = 3; // ID produk yang ingin ditampilkan
-    $sql = "SELECT * FROM produk WHERE id = ?"; // Query SQL untuk mengambil data produk berdasarkan ID
-    $stmt = $conn->prepare($sql); // Persiapan statement SQL
-    $stmt->bind_param("i", $product_id); // Binding parameter ID produk ke statement
-    $stmt->execute(); // Menjalankan query
-    $result = $stmt->get_result(); // Mendapatkan hasil query dalam bentuk objek result set
+// Retrieve product data from database using prepared statement
+$product_id = 3; // ID produk yang ingin ditampilkan
+$sql = "SELECT * FROM produk WHERE id = ?"; // Query SQL untuk mengambil data produk berdasarkan ID
+$stmt = $conn->prepare($sql); // Persiapan statement SQL
+$stmt->bind_param("i", $product_id); // Binding parameter ID produk ke statement
+$stmt->execute(); // Menjalankan query
+$result = $stmt->get_result(); // Mendapatkan hasil query dalam bentuk objek result set
 
-    if ($result->num_rows > 0) {
-        $product = $result->fetch_assoc(); // Mengambil data produk ke dalam bentuk array asosiatif
-    } else {
-        echo "Produk tidak ditemukan."; // Menampilkan pesan jika produk tidak ditemukan
-        exit(); // Menghentikan eksekusi script selanjutnya jika produk tidak ditemukan
-    }
+if ($result->num_rows > 0) {
+    $product = $result->fetch_assoc(); // Mengambil data produk ke dalam bentuk array asosiatif
+} else {
+    echo "Produk tidak ditemukan."; // Menampilkan pesan jika produk tidak ditemukan
+    exit(); // Menghentikan eksekusi script selanjutnya jika produk tidak ditemukan
+}
 
-    $conn->close(); // Menutup koneksi database setelah selesai mengambil data produk
-    ?>
+$conn->close(); // Menutup koneksi database setelah selesai mengambil data produk
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,4 +88,3 @@ if ($conn->connect_error) {
 </body>
 
 </html>
-
