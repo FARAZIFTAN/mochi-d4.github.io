@@ -1,4 +1,4 @@
-/* Reset CSS */
+/* Reset CSS untuk menghilangkan margin dan padding default serta mengatur box-sizing dan font */
 * {
     margin: 0;
     padding: 0;
@@ -6,219 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Hero Section */
-.hero {
-    width: 100%;
-    min-height: 100vh;
-    padding: 10px 10%;
-    overflow: hidden;
-    position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('mochi1.jpeg');
-    background-position: center;
-    background-size: cover;
-    filter: blur(3px);
-    z-index: -1;
-}
-
-/* Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: 15px 20px;
-    position: relative;
-    z-index: 100;
-}
-
-.logo {
-    width: 140px;
-}
-
-.nav-links ul {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links ul li {
-    margin: 0 15px;
-}
-
-.nav-links ul li a {
-    text-decoration: none;
-    color: var(--header-text-color);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links ul li a:hover {
-    color: var(--secondary-color);
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-}
-
-.logout-btn {
-    text-decoration: none;
-    color: var(--header-text-color);
-    margin-right: 15px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-}
-
-.logout-btn i {
-    margin-right: 8px;
-}
-
-.hamburger {
-    display: none;
-    font-size: 24px;
-    color: var(--header-text-color);
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Content Styles */
-.content {
-    margin-top: 10%;
-    max-width: 600px;
-}
-
-.content h1 {
-    font-size: 70px;
-    color: #080505;
-}
-
-.content p {
-    margin: 10px 0 30px;
-    color: #0c0909;
-    animation-delay: 0.5s;
-}
-
-.content .btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 40px;
-    color: #fff;
-    background-image: linear-gradient(40deg, #ffacc8, #f46d6d);
-    border-radius: 30px;
-    border-top-right-radius: 0;
-    transition: 0.5s;
-    animation-delay: 1s;
-}
-
-.content .btn:hover {
-    border-top-right-radius: 30px;
-}
-
-/* Animations */
-.anim {
-    opacity: 0;
-    transform: translate(30px);
-    animation: moveup 0.5s linear forwards;
-}
-
-@keyframes moveup {
-    100% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: var(--primary-color);
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .nav-links ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .nav-links ul li {
-        margin: 10px 0;
-    }
-
-    .hamburger {
-        display: block;
-    }
-
-    .content {
-        margin-top: 20%;
-        max-width: 100%;
-    }
-
-    .content h1 {
-        font-size: 50px;
-    }
-
-    .content p {
-        font-size: 14px;
-    }
-
-    .content .btn {
-        padding: 10px 40px;
-        font-size: 14px;
-    }
-
-    .feature-img {
-        width: 100%;
-        position: static;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero {
-        padding: 10px 5%;
-    }
-
-    .content h1 {
-        font-size: 40px;
-    }
-
-    .content p {
-        font-size: 12px;
-    }
-
-    .content .btn {
-        padding: 10px 30px;
-        font-size: 12px;
-    }
-
-    .feature-img {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
-
-/* Produk Styles */
+/* style_produk.css */
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -251,9 +39,19 @@
 }
 
 .product-card .btn {
-    padding: 10px 30px;
+    padding: 12px 30px;
     font-size: 14px;
     margin: 20px 0;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-card .btn:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
 }
 
 .product-card:hover {
@@ -261,7 +59,7 @@
     box-shadow: 0 4px 10px rgb(79, 78, 78);
 }
 
-/* Footer Styles */
+/* Bagian Footer */
 footer {
     text-align: center;
     padding: 1em 0;
@@ -273,17 +71,21 @@ footer p {
     margin: 1;
 }
 
-/* Responsive Product Card */
+/* Media queries untuk membuat situs responsif */
 @media (max-width: 768px) {
+    .product-container {
+        padding: 3px 10px; /* Mengurangi padding untuk lebih baik pada layar yang lebih kecil */
+    }
+
     .product-card {
-        width: 100%;
-        margin: 10px 0;
+        width: calc(50% - 20px); /* Menyusun produk dalam dua kolom */
+        margin: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .product-card {
-        width: 100%;
+        width: 100%; /* Menyusun produk dalam satu kolom penuh */
         margin: 10px 0;
     }
 }
