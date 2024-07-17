@@ -6,6 +6,8 @@
   <title>Website Mochi</title>
   <link rel="stylesheet" href="CSS/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
 </head>
 <body>
   <div class="hero">
@@ -36,7 +38,49 @@
     </div>
   </div>
 
+  <!-- Testimonial Section -->
+  <div class="testimonial-section">
+    <h2>Testimonials</h2>
+    <div class="testimonial-slider">
+      <div class="testimonial">
+        <p>"Mochi di sini sangat enak! Saya tidak pernah mencicipi yang seperti ini sebelumnya."</p>
+        <h4>- Pelanggan 1</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Pengalaman belanja di toko ini sangat memuaskan. Pelayanannya cepat dan ramah."</p>
+        <h4>- Pelanggan 2</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Rekomendasi terbaik untuk pecinta mochi. Rasa dan kualitasnya sangat terjaga."</p>
+        <h4>- Pelanggan 3</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script>
+    $(document).ready(function(){
+      $('.testimonial-slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+    });
+
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
 
