@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- Mendefinisikan dokumen sebagai HTML5 dan menetapkan bahasa ke bahasa Inggris -->
+<html lang="en">
 <head>
-  <meta charset="UTF-8" /> <!-- Menetapkan karakter encoding dokumen ke UTF-8 -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Memastikan tampilan yang responsif di perangkat seluler -->
-  <title>website mochi</title> <!-- Menetapkan judul halaman yang akan muncul di tab browser -->
-  <link rel="stylesheet" href="CSS/style.css" /> <!-- Menyertakan file CSS eksternal untuk styling -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website Mochi</title>
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
-  <div class="hero"> <!-- Div ini berfungsi sebagai elemen hero section utama -->
-    <nav> <!-- Bagian navigasi situs -->
+  <div class="hero">
+    <nav class="navbar">
       <div class="nav-logo">
-        <img src="img/logooo.png" class="logo" /> <!-- Menampilkan logo situs -->
+        <img src="img/logooo.png" class="logo" alt="Logo">
       </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li> <!-- Link navigasi ke halaman utama -->
-        <li><a href="produk.php">Product</a></li> <!-- Link navigasi ke halaman produk -->
-        <li><a href="about.html">About</a></li> <!-- Link navigasi ke halaman tentang -->
-      </ul>
+      <div class="nav-links" id="nav-links">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="produk.php">Product</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
       <div class="nav-actions">
         <a href="proses_logout.php" class="logout-btn">
-          <i class="fas fa-sign-out-alt"></i> <!-- Icon logout -->
+          <i class="fas fa-sign-out-alt"></i>
         </a>
+        <button class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
     </nav>
-    <div class="content"> <!-- Bagian konten utama -->
-      <h1 class="anim">
-        Hi<br />
-        Mochier
-      </h1> <!-- Menampilkan judul dengan efek animasi -->
-      <p class="anim">Mari jelajahi keindahan rasa di Mochi, tempat di mana tiap gigitan adalah petualangan baru. Selamat datang, penikmat kuliner sejati untuk menikmati mochi!</p> <!-- Paragraf dengan efek animasi -->
-      <a href="login.php" class="btn anim">join sekarang</a> <!-- Tombol dengan link ke halaman login, dan efek animasi -->
+    <div class="content">
+      <h1 class="anim">Hi<br />Mochier</h1>
+      <p class="anim">Mari jelajahi keindahan rasa di Mochi, tempat di mana tiap gigitan adalah petualangan baru. Selamat datang, penikmat kuliner sejati untuk menikmati mochi!</p>
+      <a href="login.php" class="btn anim">Join Sekarang</a>
     </div>
   </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>

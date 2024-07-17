@@ -1,4 +1,4 @@
-/* Reset CSS untuk menghilangkan margin dan padding default serta mengatur box-sizing dan font */
+/* Reset CSS */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Hero section yang mengambil lebar penuh dan minimal setinggi viewport dengan padding dan posisi relatif */
+/* Hero Section */
 .hero {
     width: 100%;
     min-height: 100vh;
@@ -15,7 +15,6 @@
     position: relative;
 }
 
-/* Menambahkan gambar latar belakang yang di-blur untuk hero section */
 .hero::before {
     content: "";
     position: absolute;
@@ -30,56 +29,86 @@
     z-index: -1;
 }
 
-/* Navigasi dengan fleksbox untuk distribusi elemen, pembatasan lebar maksimal dan penyesuaian margin/padding */
-nav {
+/* Navbar Styles */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    background-color: var(--primary-color);
+    padding: 15px 20px;
+    position: relative;
+    z-index: 100;
 }
 
-/* Ukuran logo */
 .logo {
     width: 140px;
 }
 
-/* Menampilkan item navigasi secara inline tanpa bullet point dan dengan margin */
-nav ul {
+.nav-links ul {
     display: flex;
     list-style: none;
 }
 
-/* Menampilkan item navigasi secara inline tanpa bullet point dan dengan margin */
-nav ul li {
-    margin: 10px 15px;
+.nav-links ul li {
+    margin: 0 15px;
 }
 
-/* Link navigasi tanpa garis bawah dengan warna teks dan font tebal */
-nav ul li a {
+.nav-links ul li a {
     text-decoration: none;
-    color: #0d0909;
+    color: var(--header-text-color);
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Kelas tombol logout dengan teks putih dan ikon */
+.nav-links ul li a:hover {
+    color: var(--secondary-color);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
 .logout-btn {
     text-decoration: none;
-    color: #000000;
+    color: var(--header-text-color);
     margin-right: 15px;
     font-weight: 400;
     display: flex;
     align-items: center;
 }
 
-/* Gaya untuk ikon logout */
 .logout-btn i {
     margin-right: 8px;
 }
 
-/* Kelas tombol umum dengan padding, warna teks, background gradient, dan border radius serta transisi */
-.btn {
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: var(--header-text-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Content Styles */
+.content {
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+.content h1 {
+    font-size: 70px;
+    color: #080505;
+}
+
+.content p {
+    margin: 10px 0 30px;
+    color: #0c0909;
+    animation-delay: 0.5s;
+}
+
+.content .btn {
     display: inline-block;
     text-decoration: none;
     padding: 14px 40px;
@@ -88,40 +117,14 @@ nav ul li a {
     border-radius: 30px;
     border-top-right-radius: 0;
     transition: 0.5s;
-}
-
-/* Bagian konten dengan margin atas dan lebar maksimal */
-.content {
-    margin-top: 10%;
-    max-width: 600px;
-}
-
-/* Gaya untuk judul konten dengan ukuran font besar dan warna */
-.content h1 {
-    font-size: 70px;
-    color: #080505;
-}
-
-/* Paragraf dalam konten dengan margin, warna teks dan penundaan animasi */
-.content p {
-    margin: 10px 0 30px;
-    color: #0c0909;
-    animation-delay: 0.5s;
-}
-
-/* Tombol dalam konten dengan padding, ukuran font, dan penundaan animasi */
-.content .btn {
-    padding: 15px 80px;
-    font-size: 16px;
     animation-delay: 1s;
 }
 
-/* Efek hover pada tombol yang mengubah border radius */
-.btn:hover {
+.content .btn:hover {
     border-top-right-radius: 30px;
 }
 
-/* Animasi */
+/* Animations */
 .anim {
     opacity: 0;
     transform: translate(30px);
@@ -135,20 +138,35 @@ nav ul li a {
     }
 }
 
-/* Media queries untuk membuat situs responsif */
+/* Responsive Design */
 @media (max-width: 768px) {
-    nav {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--primary-color);
+        width: 100%;
+        display: none;
         flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    nav ul {
-        padding: 0;
-        margin: 0;
+    .nav-links.show {
+        display: flex;
     }
 
-    nav ul li {
-        display: block;
+    .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links ul li {
         margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
     }
 
     .content {
@@ -200,7 +218,7 @@ nav ul li a {
     }
 }
 
-/* style_produk.css */
+/* Produk Styles */
 .product-container {
     display: flex;
     flex-wrap: wrap;
@@ -243,7 +261,7 @@ nav ul li a {
     box-shadow: 0 4px 10px rgb(79, 78, 78);
 }
 
-/* Bagian Footer */
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 1em 0;
@@ -255,7 +273,7 @@ footer p {
     margin: 1;
 }
 
-/* Media queries untuk membuat situs responsif */
+/* Responsive Product Card */
 @media (max-width: 768px) {
     .product-card {
         width: 100%;
