@@ -1,141 +1,152 @@
 /* style_about.css */
 
+/* CSS Variables */
+:root {
+    --primary-color: #f48fb1;
+    --secondary-color: #333;
+    --background-color: #fdf0f7;
+    --container-background: #fff;
+    --text-color: #666;
+    --header-text-color: #fff;
+    --footer-background: #dec2c2;
+    --footer-text-color: #fff;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --font-family: 'Poppins', sans-serif;
+}
+
 /* General Styles */
 body {
-    font-family: 'Poppins', sans-serif; /* Mengatur jenis font untuk seluruh halaman */
-    line-height: 1.6; /* Spasi garis ganda antara baris */
-    margin: 0; /* Menghilangkan margin luar pada body */
-    padding: 0; /* Menghilangkan padding pada body */
-    background-color: #fdf0f7; /* Warna latar belakang */
-    color: #333; /* Warna teks utama */
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
 }
 
 .container {
-    max-width: 1200px; /* Lebar maksimum kontainer */
-    margin: 0 auto; /* Posisi tengah secara horizontal */
-    padding: 20px; /* Ruang dalam kontainer */
-    background-color: #fff; /* Warna latar belakang kontainer */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan kotak tipis */
-    border-radius: 8px; /* Sudut melengkung */
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--container-background);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
 }
 
 /* Header Styles */
 header {
-    background-color: #f48fb1; /* Warna header */
-    padding: 20px 0; /* Padding atas/bawah */
-    text-align: center; /* Posisi teks ke tengah */
-    border-radius: 8px 8px 0 0; /* Sudut melengkung hanya pada atas */
+    background-color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .header-content h1 {
-    margin: 0; /* Menghilangkan margin atas/bawah pada judul */
-    font-size: 3em; /* Ukuran font judul */
-    color: #fff; /* Warna teks judul */
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Bayangan teks */
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--header-text-color);
 }
 
 .header-content p {
-    font-size: 1.2em; /* Ukuran font paragraf */
-    color: #fff; /* Warna teks paragraf */
+    font-size: 1.1em;
+    color: var(--header-text-color);
 }
 
 /* Main Content Styles */
 .about-section, .benefits-section {
-    margin-bottom: 30px; /* Ruang bawah antara bagian */
+    margin-bottom: 20px;
 }
 
 .about-section h2, .benefits-section h2 {
-    color: #f48fb1; /* Warna judul */
-    font-size: 2.5em; /* Ukuran font judul */
-    margin-top: 0; /* Menghilangkan margin atas pada judul */
-    padding-bottom: 10px; /* Ruang bawah judul */
-    border-bottom: 2px solid #f48fb1; /* Garis bawah */
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
 }
 
-.about-section p {
-    font-size: 1.2em; /* Ukuran font paragraf */
-    color: #666; /* Warna teks paragraf */
-    line-height: 1.8; /* Spasi garis ganda antara baris */
+.about-section p, .benefits-section li {
+    font-size: 1.1em;
+    color: var(--text-color);
+    line-height: 1.8;
 }
 
 .benefits-section ul {
-    list-style-type: none; /* Menghilangkan gaya daftar bawaan */
-    padding-left: 0; /* Menghilangkan padding kiri pada daftar */
+    list-style-type: none;
+    padding-left: 0;
 }
 
 .benefits-section li {
-    font-size: 1.2em; /* Ukuran font elemen daftar */
-    color: #666; /* Warna teks elemen daftar */
-    line-height: 1.8; /* Spasi garis ganda antara baris */
-    margin-bottom: 10px; /* Ruang bawah antara elemen daftar */
-    position: relative; /* Posisi relatif */
-    padding-left: 20px; /* Ruang kiri */
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
 }
 
 .benefits-section li::before {
-    content: "\2022"; /* Simbol bullet */
-    color: #f48fb1; /* Warna bullet */
-    font-size: 1.5em; /* Ukuran font bullet */
-    position: absolute; /* Posisi absolut */
-    left: 0; /* Posisi ke kiri */
-    top: 3px; /* Posisi ke atas */
+    content: "\2022";
+    color: var(--primary-color);
+    font-size: 1.2em;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 /* Footer Styles */
 footer {
-    background-color: #333; /* Warna latar belakang footer */
-    color: #fff; /* Warna teks footer */
-    text-align: center; /* Posisi teks ke tengah */
-    padding: 20px 0; /* Padding atas/bawah */
-    border-radius: 0 0 8px 8px; /* Sudut melengkung hanya pada bawah */
+    background-color: var(--footer-background);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 20px;
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .footer-content p {
-    margin: 0; /* Menghilangkan margin atas/bawah pada paragraf */
-    font-size: 0.9em; /* Ukuran font paragraf */
+    margin: 0;
+    font-size: 0.9em;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 10px; /* Mengurangi ruang dalam kontainer pada layar kecil */
+        padding: 15px;
     }
 
     .header-content h1 {
-        font-size: 2.5em; /* Ukuran font judul pada layar kecil */
+        font-size: 2em;
     }
 
     .header-content p {
-        font-size: 1em; /* Ukuran font paragraf pada layar kecil */
+        font-size: 1em;
     }
 
     .about-section h2, .benefits-section h2 {
-        font-size: 2em; /* Ukuran font judul pada layar kecil */
+        font-size: 1.8em;
     }
 
     .about-section p, .benefits-section li {
-        font-size: 1em; /* Ukuran font paragraf dan elemen daftar pada layar kecil */
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
     .container {
-        padding: 5px; /* Mengurangi padding lebih lanjut pada layar sangat kecil */
+        padding: 10px;
     }
 
     .header-content h1 {
-        font-size: 2em; /* Ukuran font judul pada layar sangat kecil */
+        font-size: 1.8em;
     }
 
     .header-content p {
-        font-size: 0.9em; /* Ukuran font paragraf pada layar sangat kecil */
+        font-size: 0.9em;
     }
 
     .about-section h2, .benefits-section h2 {
-        font-size: 1.8em; /* Ukuran font judul pada layar sangat kecil */
+        font-size: 1.6em;
     }
 
     .about-section p, .benefits-section li {
-        font-size: 0.9em; /* Ukuran font paragraf dan elemen daftar pada layar sangat kecil */
+        font-size: 0.9em;
     }
 }
