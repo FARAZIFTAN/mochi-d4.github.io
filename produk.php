@@ -7,36 +7,39 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website mochi</title>
+    <title>Website Mochi</title>
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/style_produk.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
-
 <body>
     <div class="hero">
-        <nav>
+        <nav class="navbar">
             <div class="nav-logo">
                 <img src="img/logooo.png" class="logo" />
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produk.php">Product</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.php">Product</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
             <div class="nav-actions">
                 <a href="proses_logout.php" class="logout-btn">
-                <i class="fas fa-sign-out-alt"></i> <!-- Icon logout -->
+                    <i class="fas fa-sign-out-alt"></i>
                 </a>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <?php
-                session_start(); // Memulai sesi PHP
-                if (!isset($_SESSION['username'])) { // Memeriksa apakah variabel sesi 'username' tidak diset
-                    header("Location: login.php"); // Redirect ke halaman login jika tidak
-                    exit(); // Keluar dari skrip PHP setelah redirect
+                session_start();
+                if (!isset($_SESSION['username'])) {
+                    header("Location: login.php");
+                    exit();
                 }
                 ?>
             </div>
@@ -56,6 +59,14 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
         </footer>
     </div>
-</body>
 
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    </script>
+</body>
 </html>
