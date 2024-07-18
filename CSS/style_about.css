@@ -3,36 +3,52 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Variables for colors */
+/* Variabel untuk warna */
 :root {
-    --primary-color: #ff6f61;
-    --secondary-color: #ffb88c;
+    --primary-color: #ff0099; /* Pink cerah */
+    --secondary-color: #ff66b2; /* Pink muda */
+    --background-color: #fce4ec; /* Pink lembut untuk latar belakang */
     --header-text-color: #fff;
-    --text-color: #484848;
+    --text-color: #333;
 }
 
 /* Hero Section */
 .hero {
     width: 100%;
     min-height: 100vh;
-    padding: 10px 10%;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('images/mochi1.jpeg') center/cover no-repeat;
+    padding: 10px 5%;
+    background: linear-gradient(to right, rgba(255, 0, 153, 0.7), rgba(255, 102, 178, 0.7)), url('images/mochi1.jpeg') center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: -1;
+.hero .content h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.hero .content p {
+    margin: 10px 0 20px;
+}
+
+.hero .btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    border-radius: 30px;
+    padding: 14px 40px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
 }
 
 /* Navbar Styles */
@@ -43,10 +59,6 @@
     padding: 15px 20px;
     position: relative;
     z-index: 100;
-}
-
-.logo {
-    width: 140px;
 }
 
 .nav-links ul {
@@ -61,30 +73,12 @@
 .nav-links ul li a {
     text-decoration: none;
     color: var(--header-text-color);
-    font-weight: bold;
+    font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links ul li a:hover {
     color: var(--secondary-color);
-}
-
-.nav-actions {
-    display: flex;
-    align-items: center;
-}
-
-.logout-btn {
-    text-decoration: none;
-    color: var(--header-text-color);
-    margin-right: 15px;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-}
-
-.logout-btn i {
-    margin-right: 8px;
 }
 
 .hamburger {
@@ -96,125 +90,85 @@
     cursor: pointer;
 }
 
-/* Content Styles */
-.content {
-    margin-top: 10%;
-    max-width: 600px;
+/* About Section */
+.about-section {
+    padding: 50px 5%;
+    background: var(--background-color);
     text-align: center;
-    color: #fff;
 }
 
-.content h1 {
-    font-size: 70px;
-    margin-bottom: 20px;
-    animation: fadeIn 1s forwards;
-}
-
-.content p {
-    margin: 10px 0 30px;
-    animation: fadeIn 1.5s forwards;
-}
-
-.content .btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 40px;
-    color: #fff;
-    background: linear-gradient(40deg, #ffacc8, #f46d6d);
-    border-radius: 30px;
-    border-top-right-radius: 0;
-    transition: 0.5s;
-    animation: fadeIn 2s forwards;
-}
-
-.content .btn:hover {
-    border-top-right-radius: 30px;
-    background: linear-gradient(40deg, #f46d6d, #ffacc8);
-}
-
-/* Animations */
-.anim {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: moveup 0.5s linear forwards;
-}
-
-@keyframes moveup {
-    100% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Testimonial Section */
-.testimonial-section {
-    padding: 50px 10%;
-    background-color: #f9f9f9;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.testimonial-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(255, 111, 97, 0.5), rgba(255, 184, 140, 0.5));
-    z-index: -1;
-    transform: translateX(-50%);
-}
-
-.testimonial-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: var(--text-color);
-    position: relative;
-    z-index: 1;
-}
-
-.testimonial-slider {
+.about-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    position: relative;
-    z-index: 1;
+    gap: 20px;
 }
 
-.testimonial {
+.about-text {
     max-width: 600px;
-    background: #fff;
-    padding: 30px;
-    margin: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.testimonial:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+.about-text h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
 }
 
-.testimonial p {
+.about-text p {
     font-size: 1.1em;
     color: var(--text-color);
     margin-bottom: 20px;
 }
 
-.testimonial h4 {
+.about-text h4 {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Benefits Section */
+.benefits-section {
+    padding: 50px 5%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.benefits-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.benefit {
+    max-width: 600px;
+    background: var(--background-color);
+    padding: 30px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.benefit p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.benefit h4 {
     font-size: 1.2em;
     color: var(--primary-color);
 }
@@ -226,21 +180,6 @@ footer {
     background-color: var(--primary-color);
     color: #fff;
     position: relative;
-}
-
-footer .social-icons {
-    margin-top: 10px;
-}
-
-footer .social-icons a {
-    margin: 0 10px;
-    color: #fff;
-    font-size: 1.5em;
-    transition: color 0.3s;
-}
-
-footer .social-icons a:hover {
-    color: var(--secondary-color);
 }
 
 footer p {
@@ -278,21 +217,16 @@ footer p {
         display: block;
     }
 
-    .content {
-        margin-top: 20%;
-        max-width: 100%;
+    .hero .content h1 {
+        font-size: 40px;
     }
 
-    .content h1 {
-        font-size: 50px;
-    }
-
-    .content p {
+    .hero .content p {
         font-size: 14px;
     }
 
-    .content .btn {
-        padding: 10px 40px;
+    .hero .btn {
+        padding: 10px 30px;
         font-size: 14px;
     }
 }
@@ -302,16 +236,16 @@ footer p {
         padding: 10px 5%;
     }
 
-    .content h1 {
-        font-size: 40px;
+    .hero .content h1 {
+        font-size: 30px;
     }
 
-    .content p {
+    .hero .content p {
         font-size: 12px;
     }
 
-    .content .btn {
-        padding: 10px 30px;
+    .hero .btn {
+        padding: 10px 20px;
         font-size: 12px;
     }
 }
