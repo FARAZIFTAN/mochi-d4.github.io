@@ -8,7 +8,7 @@
 
 /* Variables for colors */
 :root {
-    --primary-color: #ff6f61;
+    --primary-color: #ff69b4;
     --secondary-color: #ffb88c;
     --header-text-color: #fff;
     --text-color: #484848;
@@ -21,7 +21,7 @@
     padding: 10px 10%;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat;
+    background: linear-gradient(to right, rgba(255, 105, 180, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat;
 }
 
 .hero::before {
@@ -120,7 +120,7 @@
     text-decoration: none;
     padding: 14px 40px;
     color: #fff;
-    background: linear-gradient(40deg, #ffacc8, #f46d6d);
+    background: linear-gradient(40deg, #ffacc8, #ff69b4);
     border-radius: 30px;
     border-top-right-radius: 0;
     transition: 0.5s;
@@ -129,7 +129,7 @@
 
 .content .btn:hover {
     border-top-right-radius: 30px;
-    background: linear-gradient(40deg, #f46d6d, #ffacc8);
+    background: linear-gradient(40deg, #ff69b4, #ffacc8);
 }
 
 /* Animations */
@@ -171,7 +171,7 @@
     left: 50%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 111, 97, 0.5), rgba(255, 184, 140, 0.5));
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.5), rgba(255, 184, 140, 0.5));
     z-index: -1;
     transform: translateX(-50%);
 }
