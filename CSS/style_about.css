@@ -6,22 +6,22 @@
     font-family: 'Roboto', sans-serif;
 }
 
-/* Variabel untuk warna */
+/* Variables for colors */
 :root {
-    --primary-color: #ff0099; /* Pink cerah */
-    --secondary-color: #ff66b2; /* Pink muda */
-    --background-color: #fce4ec; /* Pink lembut untuk latar belakang */
-    --header-text-color: #fff;
+    --primary-color: #ff6f61;
+    --secondary-color: #ffb88c;
+    --background-color: #f4f4f4;
     --text-color: #333;
+    --header-text-color: #fff;
 }
 
-/* Hero Section */
+/* Header Styles */
 .hero {
     width: 100%;
     min-height: 100vh;
-    padding: 10px 5%;
-    background: linear-gradient(to right, rgba(255, 0, 153, 0.7), rgba(255, 102, 178, 0.7)), url('images/mochi1.jpeg') center/cover no-repeat;
-    color: #fff;
+    padding: 5% 10%;
+    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('images/hero_image.jpeg') center/cover no-repeat;
+    color: var(--header-text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,36 +29,20 @@
     text-align: center;
 }
 
-.hero .content h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-}
-
-.hero .content p {
-    margin: 10px 0 20px;
-}
-
-.hero .btn {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    border-radius: 30px;
-    padding: 14px 40px;
-    color: #fff;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.hero .btn:hover {
-    background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
-}
-
-/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
     padding: 15px 20px;
-    position: relative;
     z-index: 100;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
 }
 
 .nav-links ul {
@@ -73,11 +57,11 @@
 .nav-links ul li a {
     text-decoration: none;
     color: var(--header-text-color);
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.nav-links ul li a:hover {
+.nav-links ul li a.active, .nav-links ul li a:hover {
     color: var(--secondary-color);
 }
 
@@ -90,100 +74,88 @@
     cursor: pointer;
 }
 
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.content .btn {
+    background: linear-gradient(40deg, #ffacc8, #f46d6d);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.content .btn:hover {
+    background: linear-gradient(40deg, #f46d6d, #ffacc8);
+}
+
 /* About Section */
 .about-section {
-    padding: 50px 5%;
-    background: var(--background-color);
+    padding: 50px 10%;
+    background: #fff;
     text-align: center;
 }
 
-.about-container {
+.about-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
 }
 
 .about-text {
     max-width: 600px;
-}
-
-.about-text h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.about-text p {
-    font-size: 1.1em;
+    margin: 0 auto;
+    font-size: 1.125rem;
     color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-.about-text h4 {
-    font-size: 1.2em;
-    color: var(--secondary-color);
 }
 
 .about-image img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Benefits Section */
 .benefits-section {
-    padding: 50px 5%;
-    background-color: #fff;
+    background: var(--background-color);
+    padding: 50px 10%;
     text-align: center;
 }
 
-.benefits-container {
+.benefits-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 20px;
 }
 
-.benefit {
-    max-width: 600px;
-    background: var(--background-color);
-    padding: 30px;
-    margin: 10px;
+.benefit-item {
+    background: #fff;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.benefit:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.benefit p {
-    font-size: 1.1em;
-    color: var(--text-color);
-    margin-bottom: 20px;
-}
-
-.benefit h4 {
-    font-size: 1.2em;
+.benefit-item h3 {
+    margin-bottom: 10px;
     color: var(--primary-color);
 }
 
 /* Footer Styles */
 footer {
+    background: var(--primary-color);
+    color: #fff;
     text-align: center;
     padding: 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    position: relative;
-}
-
-footer p {
-    margin: 5px 0;
 }
 
 /* Responsive Design */
@@ -192,7 +164,7 @@ footer p {
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: var(--primary-color);
+        background: var(--primary-color);
         width: 100%;
         display: none;
         flex-direction: column;
@@ -217,35 +189,33 @@ footer p {
         display: block;
     }
 
-    .hero .content h1 {
-        font-size: 40px;
+    .content h1 {
+        font-size: 2rem;
     }
 
-    .hero .content p {
-        font-size: 14px;
+    .content p {
+        font-size: 1rem;
     }
 
-    .hero .btn {
-        padding: 10px 30px;
-        font-size: 14px;
+    .content .btn {
+        padding: 10px 20px;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding: 10px 5%;
+        padding: 5% 5%;
     }
 
-    .hero .content h1 {
-        font-size: 30px;
+    .content h1 {
+        font-size: 1.5rem;
     }
 
-    .hero .content p {
-        font-size: 12px;
+    .content p {
+        font-size: 0.875rem;
     }
 
-    .hero .btn {
-        padding: 10px 20px;
-        font-size: 12px;
+    .content .btn {
+        padding: 8px 15px;
     }
 }
