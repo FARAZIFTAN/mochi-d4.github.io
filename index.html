@@ -19,8 +19,43 @@
     />
     <style>
       .content {
-        text-align: left;
-        margin-left: 0;
+        text-align: center;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .content h1 {
+        font-size: 2.5em;
+        line-height: 1.2;
+        margin-bottom: 20px;
+      }
+      .content p {
+        font-size: 1.1em;
+        margin: 15px 0 30px;
+      }
+      .content .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 14px 40px;
+        color: #fff;
+        background: linear-gradient(40deg, #ffacc8, #f46d6d);
+        border-radius: 30px;
+        border-top-right-radius: 0;
+        transition: 0.5s;
+      }
+      .content .btn:hover {
+        border-top-right-radius: 30px;
+        background: linear-gradient(40deg, #f46d6d, #ffacc8);
+      }
+      .anim {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: moveup 0.5s linear forwards;
+      }
+      @keyframes moveup {
+        100% {
+          opacity: 1;
+          transform: translate(0px);
+        }
       }
     </style>
   </head>
@@ -47,7 +82,7 @@
         </div>
       </nav>
       <div class="content">
-        <h1 class="anim">Hi<br />Mochier</h1>
+        <h1 class="anim">Hi Mochier</h1>
         <p class="anim">
           Mari jelajahi keindahan rasa di Mochi, tempat di mana tiap gigitan
           adalah petualangan baru. Selamat datang, penikmat kuliner sejati untuk
@@ -56,7 +91,6 @@
         <a href="login.php" class="btn anim">Join Sekarang</a>
       </div>
     </div>
-
     <!-- Testimonial Section -->
     <div class="testimonial-section">
       <h2>Testimonials</h2>
@@ -84,12 +118,10 @@
         </div>
       </div>
     </div>
-
     <!-- Footer -->
     <footer>
       <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
