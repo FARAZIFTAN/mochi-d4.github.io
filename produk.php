@@ -27,7 +27,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="produk.php">Produk</a></li>
-                    <li><a href="about.html">Tentang</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
                 </ul>
             </div>
             <div class="nav-actions">
