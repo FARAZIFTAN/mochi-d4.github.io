@@ -1,91 +1,86 @@
-/* Reset some basic elements for consistency across browsers */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* General body styling */
+/* General Styles */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #ffe6f0;
+  margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
 }
 
-/* Container styling */
+h1 {
+  color: #ff69b4;
+}
+
+/* Container Styles */
 .checkout-container {
-  background: #fff;
-  padding: 20px 40px;
-  border-radius: 8px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  max-width: 400px;
   width: 100%;
-}
-
-/* Heading styling */
-.checkout-container h1 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
   text-align: center;
-  color: #040507;
 }
 
-/* Form group styling */
+.checkout-container h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Form Styles */
 .form-group {
   margin-bottom: 15px;
+  text-align: left;
 }
 
-/* Label styling */
 .form-group label {
   display: block;
   margin-bottom: 5px;
-  font-weight: 500;
-  color: #555;
+  color: #ff1493;
 }
 
-/* Input styling */
-.form-group input {
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group input[type="number"] {
   width: 100%;
   padding: 10px;
+  border: 1px solid #ff1493;
+  border-radius: 5px;
+  box-sizing: border-box;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease;
 }
 
-.form-group input:focus {
-  border-color: #007bff;
+.form-group input[type="text"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="number"]:focus {
+  border-color: #ff69b4;
   outline: none;
 }
 
-/* Total price paragraph styling */
 #total-price {
+  margin-top: 15px;
   font-size: 18px;
-  font-weight: 600;
-  margin: 15px 0;
-  color: #ff6f61;
-  text-align: center;
+  font-weight: bold;
+  color: #ff1493;
 }
 
-/* Submit button styling */
-.submit-order {
-  background-color: #ff6f61;
+/* Button Styles */
+button.submit-order {
+  background-color: #ff69b4;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
   border: none;
-  border-radius: 4px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  display: block;
-  width: 100%;
+  transition: background-color 0.3s;
 }
 
-.submit-order:hover {
-  background-color: #ff5a4d;
+button.submit-order:hover {
+  background-color: #ff1493;
 }
