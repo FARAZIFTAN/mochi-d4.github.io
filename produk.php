@@ -26,8 +26,8 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             <div class="nav-links" id="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="produk.php">Product</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="about.html">Tentang</a></li>
                 </ul>
             </div>
             <div class="nav-actions">
@@ -52,7 +52,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                     <div class="product-card anim">
                         <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
                         <h2><?php echo $row['nama_produk']; ?></h2>
-                        <a href="detail produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn anim">Beli Sekarang</a>
+                        <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn anim">Beli Sekarang</a>
                     </div>
                 <?php endwhile; ?>
             </div>
