@@ -1,74 +1,72 @@
-/* style_about.css */
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-/* CSS Variables */
+/* Variables for colors */
 :root {
     --primary-color: #ff6f61;
-    --secondary-color: #333;
-    --background-color: #fdf0f7;
-    --container-background: #fff;
-    --text-color: #666;
+    --secondary-color: #ffb88c;
     --header-text-color: #fff;
-    --footer-background: #dec2c2;
-    --footer-text-color: #fff;
-    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    --border-radius: 8px;
-    --font-family: 'Poppins', sans-serif;
+    --text-color: #484848;
 }
 
 /* General Styles */
 body {
-    font-family: var(--font-family);
-    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background-color: var(--background-color);
-    color: var(--secondary-color);
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--container-background);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 /* Header Styles */
 header {
-    background-color: var(--primary-color);
+    background-color: #ff6f61;
     padding: 20px;
     text-align: center;
-    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border-radius: 8px 8px 0 0;
+    color: #fff;
 }
 
 .header-content h1 {
+    font-size: 2.5rem;
     margin: 0;
-    font-size: 2.5em;
-    color: var(--header-text-color);
 }
 
 .header-content p {
-    font-size: 1.1em;
-    color: var(--header-text-color);
+    font-size: 1.1rem;
 }
 
 /* Main Content Styles */
-.about-section, .benefits-section {
+.about-section,
+.benefits-section {
     margin-bottom: 20px;
 }
 
-.about-section h2, .benefits-section h2 {
-    color: var(--primary-color);
-    font-size: 2em;
+.about-section h2,
+.benefits-section h2 {
+    color: #ff6f61;
+    font-size: 2rem;
     margin-top: 0;
     padding-bottom: 10px;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid #ff6f61;
 }
 
-.about-section p, .benefits-section li {
-    font-size: 1.1em;
-    color: var(--text-color);
+.about-section p,
+.benefits-section li {
+    font-size: 1.1rem;
+    color: #484848;
     line-height: 1.8;
 }
 
@@ -85,8 +83,8 @@ header {
 
 .benefits-section li::before {
     content: "\2022";
-    color: var(--primary-color);
-    font-size: 1.2em;
+    color: #ff6f61;
+    font-size: 1.2rem;
     position: absolute;
     left: 0;
     top: 0;
@@ -94,16 +92,16 @@ header {
 
 /* Footer Styles */
 footer {
-    background-color: var(--footer-background);
-    color: var(--footer-text-color);
+    background-color: #dec2c2;
+    color: #fff;
     text-align: center;
     padding: 20px;
-    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    border-radius: 0 0 8px 8px;
 }
 
-.footer-content p {
+footer .footer-content p {
     margin: 0;
-    font-size: 0.9em;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -113,19 +111,21 @@ footer {
     }
 
     .header-content h1 {
-        font-size: 2em;
+        font-size: 2rem;
     }
 
     .header-content p {
-        font-size: 1em;
+        font-size: 0.9rem;
     }
 
-    .about-section h2, .benefits-section h2 {
-        font-size: 1.8em;
+    .about-section h2,
+    .benefits-section h2 {
+        font-size: 1.8rem;
     }
 
-    .about-section p, .benefits-section li {
-        font-size: 1em;
+    .about-section p,
+    .benefits-section li {
+        font-size: 0.9rem;
     }
 }
 
@@ -135,18 +135,20 @@ footer {
     }
 
     .header-content h1 {
-        font-size: 1.8em;
+        font-size: 1.8rem;
     }
 
     .header-content p {
-        font-size: 0.9em;
+        font-size: 0.8rem;
     }
 
-    .about-section h2, .benefits-section h2 {
-        font-size: 1.6em;
+    .about-section h2,
+    .benefits-section h2 {
+        font-size: 1.6rem;
     }
 
-    .about-section p, .benefits-section li {
-        font-size: 0.9em;
+    .about-section p,
+    .benefits-section li {
+        font-size: 0.8rem;
     }
 }
