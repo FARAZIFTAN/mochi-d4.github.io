@@ -8,45 +8,34 @@
 
 /* Variables for colors */
 :root {
-    --primary-color: #ff6f61;
-    --secondary-color: #ffb88c;
-    --header-text-color: #fff;
-    --text-color: #484848;
-}
-
-/* Hero Section */
-.hero {
-    width: 100%;
-    min-height: 100vh;
-    padding: 10px 10%;
-    overflow: hidden;
-    position: relative;
-    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: -1;
+    --primary-color: #ff6f61; /* Pink */
+    --secondary-color: #ffb88c; /* Light Orange */
+    --header-text-color: #fff; /* White */
+    --text-color: #484848; /* Dark Gray */
 }
 
 /* Navbar Styles */
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent; /* Transparent initially */
+    transition: background-color 0.3s ease;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    position: relative;
-    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.navbar.scrolled {
+    background-color: var(--primary-color); /* Pink background on scroll */
 }
 
 .logo {
-    width: 60px; /* Reduced from 140px to 100px */
+    width: 60px; /* Adjust size as needed */
 }
 
 .nav-links ul {
@@ -66,7 +55,7 @@
 }
 
 .nav-links ul li a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Hover color change */
 }
 
 .nav-actions {
@@ -94,6 +83,27 @@
     background: none;
     border: none;
     cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
 }
 
 /* Content Styles */
@@ -130,29 +140,6 @@
 .content .btn:hover {
     border-top-right-radius: 30px;
     background: linear-gradient(40deg, #f46d6d, #ffacc8);
-}
-
-/* Animations */
-.anim {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: moveup 0.5s linear forwards;
-}
-
-@keyframes moveup {
-    100% {
-        opacity: 1;
-        transform: translate(0px);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 /* Testimonial Section */
@@ -199,119 +186,95 @@
     padding: 30px;
     margin: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    border-radius:
+    overflow: hidden;
 }
 
 .testimonial p {
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: var(--text-color);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .testimonial h4 {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: var(--primary-color);
-}
-
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--primary-color);
-    color: #fff;
-    position: relative;
-}
-
-footer .social-icons {
+    font-weight: bold;
     margin-top: 10px;
 }
 
-footer .social-icons a {
-    margin: 0 10px;
-    color: #fff;
-    font-size: 1.5em;
-    transition: color 0.3s;
-}
-
-footer .social-icons a:hover {
-    color: var(--secondary-color);
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
 }
 
 footer p {
-    margin: 5px 0;
+    margin: 0;
+    font-size: 0.9em;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
         background-color: var(--primary-color);
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        height: 100vh;
+        width: 200px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
     }
 
-    .nav-links.show {
-        display: flex;
+    .nav-links.open {
+        transform: translateX(0);
     }
 
     .nav-links ul {
         flex-direction: column;
-        width: 100%;
+        padding: 80px 20px 20px;
     }
 
     .nav-links ul li {
-        margin: 10px 0;
+        margin: 15px 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 1.2em;
     }
 
     .hamburger {
         display: block;
     }
 
-    .content {
-        margin-top: 20%;
-        max-width: 100%;
+    .nav-actions {
+        margin-left: auto;
     }
 
     .content h1 {
         font-size: 50px;
     }
 
-    .content p {
-        font-size: 14px;
-    }
-
-    .content .btn {
-        padding: 10px 40px;
-        font-size: 14px;
+    .testimonial p {
+        font-size: 1em;
     }
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding: 10px 5%;
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    .content h1 {
-        font-size: 40px;
-    }
-
-    .content p {
-        font-size: 12px;
-    }
-
-    .content .btn {
-        padding: 10px 30px;
-        font-size: 12px;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
