@@ -68,13 +68,13 @@ body {
   font-size: 18px;
   font-weight: 600;
   margin: 15px 0;
-  color: #f48fb1;
+  color: #ff6f61;
   text-align: center;
 }
 
 /* Submit button styling */
 .submit-order {
-  background-color: #f48fb1;
+  background-color: #ff6f61;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
@@ -87,5 +87,5 @@ body {
 }
 
 .submit-order:hover {
-  background-color: #f06292;
+  background-color: #ff5a4d;
 }
