@@ -53,21 +53,24 @@ $result = $conn->query($sql);
             border-color: #e57399;
         }
 
-        .btn-primary:focus, .btn-primary.focus {
+        .btn-primary:focus,
+        .btn-primary.focus {
             color: #fff;
             background-color: #e57399;
             border-color: #e57399;
             box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
         }
 
-        .btn-primary:active, .btn-primary.active,
+        .btn-primary:active,
+        .btn-primary.active,
         .show>.btn-primary.dropdown-toggle {
             color: #fff;
             background-color: #e57399;
             border-color: #e57399;
         }
 
-        .btn-primary:active:focus, .btn-primary.active:focus,
+        .btn-primary:active:focus,
+        .btn-primary.active:focus,
         .show>.btn-primary.dropdown-toggle:focus {
             box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
         }
@@ -230,76 +233,76 @@ $result = $conn->query($sql);
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-               <!-- Begin Page Content -->
-<div class="container-fluid">
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
 
-<!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Halaman Produk Admin</h1>
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-4 text-gray-800">Halaman Produk Admin</h1>
 
-<!-- Main Content Here -->
-<main>
-    <div class="product-container">
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nama Produk</th>
-                    <th>Harga Per Box</th>
-                    <th>Deskripsi</th>
-                    <th>Gambar</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['nama_produk']; ?></td>
-                    <td><?php echo $row['harga_1_box_isi_10pcs']; ?></td>
-                    <td><?php echo $row['deskripsi']; ?></td>
-                    <td><img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>" width="50"></td>
-                    <td>
-                        <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="btn btn-update">Edit</a>
-                        <a href="delete_product.php?id=<?php echo $row['id']; ?>" class="btn btn-delete">Delete</a>
-                    </td>
-                </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
-    </div>
+                    <!-- Main Content Here -->
+                    <main>
+                        <div class="product-container">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nama Produk</th>
+                                        <th>Harga Per Box</th>
+                                        <th>Deskripsi</th>
+                                        <th>Gambar</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php while ($row = $result->fetch_assoc()) : ?>
+                                        <tr>
+                                            <td><?php echo $row['id']; ?></td>
+                                            <td><?php echo $row['nama_produk']; ?></td>
+                                            <td><?php echo $row['harga_1_box_isi_10pcs']; ?></td>
+                                            <td><?php echo $row['deskripsi']; ?></td>
+                                            <td><img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>" width="50"></td>
+                                            <td>
+                                                <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="btn btn-update">Edit</a>
+                                                <a href="delete_product.php?id=<?php echo $row['id']; ?>" class="btn btn-delete">Delete</a>
+                                            </td>
+                                        </tr>
+                                    <?php endwhile; ?>
+                                </tbody>
+                            </table>
+                        </div>
 
-    <!-- Form untuk menambahkan produk baru -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Tambah Produk Baru</h6>
-        </div>
-        <div class="card-body">
-            <form action="add_product.php" method="POST">
-                <div class="form-group">
-                    <label for="nama_produk">Nama Produk</label>
-                    <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
+                        <!-- Form untuk menambahkan produk baru -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Tambah Produk Baru</h6>
+                            </div>
+                            <div class="card-body">
+                                <form action="add_product.php" method="POST">
+                                    <div class="form-group">
+                                        <label for="nama_produk">Nama Produk</label>
+                                        <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="harga_1_box_isi_10pcs">Harga Per Box</label>
+                                        <input type="text" class="form-control" id="harga_1_box_isi_10pcs" name="harga_1_box_isi_10pcs" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="deskripsi">Deskripsi</label>
+                                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gambar">Link Gambar</label>
+                                        <input type="text" class="form-control" id="gambar" name="gambar" required>
+                                    </div>
+                                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </main>
+
                 </div>
-                <div class="form-group">
-                    <label for="harga_1_box_isi_10pcs">Harga Per Box</label>
-                    <input type="text" class="form-control" id="harga_1_box_isi_10pcs" name="harga_1_box_isi_10pcs" required>
-                </div>
-                <div class="form-group">
-                    <label for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="gambar">Link Gambar</label>
-                    <input type="text" class="form-control" id="gambar" name="gambar" required>
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-            </form>
-        </div>
-    </div>
-
-</main>
-
-</div>
-<!-- /.container-fluid -->
+                <!-- /.container-fluid -->
 
 
             </div>
