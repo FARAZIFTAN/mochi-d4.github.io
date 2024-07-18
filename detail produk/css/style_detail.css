@@ -1,14 +1,20 @@
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
+    background-color: #ffe6f0;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+h1 {
+    color: #ff69b4;
+}
+
+/* Product Container Styles */
 .product-container {
     display: flex;
     background-color: #fff;
@@ -31,18 +37,21 @@ body {
     flex: 1;
 }
 
+/* Product Title Styles */
 .product-title {
     font-size: 2.2em;
     margin: 0 0 10px;
-    color: #333;
+    color: #ff69b4;
 }
 
+/* Product Price Styles */
 .product-price {
     font-size: 1.8em;
-    color: #e74c3c;
+    color: #ff1493;
     margin: 10px 0;
 }
 
+/* Product Description Styles */
 .product-description {
     font-size: 1em;
     color: #666;
@@ -50,6 +59,7 @@ body {
     line-height: 1.6;
 }
 
+/* Product Actions Styles */
 .product-actions {
     display: flex;
     align-items: center;
@@ -61,14 +71,15 @@ body {
     padding: 10px;
     font-size: 1em;
     margin-right: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #ff1493;
     border-radius: 5px;
     text-align: center;
 }
 
+/* Button Styles */
 .add-to-cart {
     padding: 12px 20px;
-    background-color: #ff6f61; /* Changed to new color */
+    background-color: #ff69b4;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -78,10 +89,11 @@ body {
 }
 
 .add-to-cart:hover {
-    background-color: #ff5a4d; /* Changed to new color */
+    background-color: #ff1493;
     transform: translateY(-2px);
 }
 
+/* Social Media Styles */
 .social-media {
     margin-top: 20px;
 }
@@ -101,5 +113,5 @@ body {
 }
 
 .social-icon:hover {
-    color: #ff6f61; /* Changed to new color */
+    color: #ff69b4;
 }
