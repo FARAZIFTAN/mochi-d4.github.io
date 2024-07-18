@@ -7,6 +7,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,11 +16,12 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
     <link rel="stylesheet" href="CSS/style_produk.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
+
 <body>
     <div class="hero">
         <nav class="navbar">
             <div class="nav-logo">
-                <img src="img/logooo.png" class="logo" />
+                <img src="img/logo.png" class="logo" />
             </div>
             <div class="nav-links" id="nav-links">
                 <ul>
@@ -69,4 +71,5 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         });
     </script>
 </body>
+
 </html>
