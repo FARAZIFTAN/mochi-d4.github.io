@@ -142,6 +142,38 @@
     background: linear-gradient(40deg, #f46d6d, #ffacc8);
 }
 
+/* Call-to-Action Section */
+.cta-section {
+    padding: 50px 10%;
+    background: linear-gradient(40deg, #ffacc8, #f46d6d);
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+.cta-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-content .btn {
+    text-decoration: none;
+    padding: 12px 30px;
+    background: #fff;
+    color: var(--primary-color);
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.cta-content .btn:hover {
+    background: #ffb88c;
+}
+
 /* Testimonial Section */
 .testimonial-section {
     padding: 50px 10%;
@@ -186,7 +218,7 @@
     padding: 30px;
     margin: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-radius:
+    border-radius: 10px;
     overflow: hidden;
 }
 
@@ -214,9 +246,61 @@ footer {
     z-index: 2;
 }
 
-footer p {
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content p {
     margin: 0;
     font-size: 0.9em;
+}
+
+.social-icons {
+    margin: 10px 0;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ffb88c;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter p {
+    margin-bottom: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #ffb88c;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #f46d6d;
 }
 
 /* Responsive Design */

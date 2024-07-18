@@ -44,17 +44,79 @@
         </div>
     </div>
 
+    <!-- Call-to-Action Section -->
+    <div class="cta-section">
+        <div class="cta-content">
+            <h2>Special Offer!</h2>
+            <p>Get a 20% discount on your first order. Don't miss out!</p>
+            <a href="produk.php" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <!-- Testimonial Section -->
+    <div class="testimonial-section">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p>"Mochi from this store is the best I've ever tasted! Highly recommend!"</p>
+                <h4>Jane Doe</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The variety of flavors is amazing. Always a delightful experience!"</p>
+                <h4>John Smith</h4>
+            </div>
+            <div class="testimonial">
+                <p>"Excellent service and delicious mochi. I will definitely come back for more."</p>
+                <h4>Emily Brown</h4>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="newsletter">
+                <p>Subscribe to our newsletter:</p>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+        </div>
     </footer>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        // JavaScript for slider initialization and navbar functionality
+        $(document).ready(function(){
+            // Testimonial slider initialization
+            $('.testimonial-slider').slick({
+                dots: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
+            });
+
+            // Hamburger menu toggle
+            $('#hamburger').click(function() {
+                $('#nav-links').toggleClass('open');
+            });
+        });
     </script>
 </body>
 </html>
