@@ -68,7 +68,7 @@ body {
 
 .add-to-cart {
     padding: 12px 20px;
-    background-color: #f48fb1;
+    background-color: #ff6f61; /* Changed to new color */
     color: #fff;
     border: none;
     cursor: pointer;
@@ -78,7 +78,7 @@ body {
 }
 
 .add-to-cart:hover {
-    background-color: #f06292;
+    background-color: #ff5a4d; /* Changed to new color */
     transform: translateY(-2px);
 }
 
@@ -101,5 +101,5 @@ body {
 }
 
 .social-icon:hover {
-    color: #f48fb1;
+    color: #ff6f61; /* Changed to new color */
 }
