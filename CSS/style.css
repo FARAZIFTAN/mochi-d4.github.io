@@ -14,8 +14,7 @@ a {
 
 /* Navbar Styles */
 .navbar {
-    background: rgba(255, 255, 255, 0.6) url('img/mochi-background.jpg') no-repeat center center;
-    background-size: cover;
+    background: #ffffff; /* Warna solid untuk navbar */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: fixed;
@@ -26,7 +25,7 @@ a {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.9) url('img/mochi-background.jpg') no-repeat center center;
+    background: #ffffff; /* Warna solid saat di-scroll */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -67,7 +66,7 @@ a {
 }
 
 .nav-links a:hover {
-    background-color: #ff69b4;
+    background-color: #ff69b4; /* Warna hover */
     color: #fff;
 }
 
@@ -116,7 +115,7 @@ a {
     padding: 10px 20px;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
-    background-color: #ff69b4;
+    background-color: #ff69b4; /* Warna tombol */
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -124,7 +123,7 @@ a {
 }
 
 .btn-primary:hover {
-    background-color: #e55b8e;
+    background-color: #e55b8e; /* Warna tombol saat hover */
 }
 
 /* Testimonial Section */
