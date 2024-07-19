@@ -41,16 +41,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         </div>
     </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-nav">
-        <a href="index.html">Home</a> &gt; <a href="produk.php">Produk</a>
-    </nav>
-
-    <!-- Search Bar -->
-    <div class="search-bar">
-        <input type="text" id="search" placeholder="Cari produk..." />
-        <button id="search-btn">Cari</button>
-    </div>
+  
 
     <!-- Main Content -->
     <main>
@@ -102,16 +93,6 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
-            }
-        });
-
-        // JavaScript for Search
-        const searchBtn = document.getElementById('search-btn');
-        searchBtn.addEventListener('click', () => {
-            const searchQuery = document.getElementById('search').value;
-            if (searchQuery) {
-                // Implement search functionality here, e.g., redirect to a search results page
-                window.location.href = `search_results.php?query=${encodeURIComponent(searchQuery)}`;
             }
         });
 
