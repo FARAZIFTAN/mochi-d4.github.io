@@ -47,19 +47,16 @@
     <section class="new-arrivals">
         <h2>Produk Terbaru</h2>
         <div class="new-arrival-slider">
+            <!-- Contoh item produk terbaru, salin dan sesuaikan untuk produk lain -->
             <div class="new-arrival-item">
-                <img src="img/new-arrival1.jpg" alt="New Arrival 1">
-                <div class="arrival-info">
-                    <h3>Produk Baru 1</h3>
-                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
-                </div>
+                <img src="img/new-arrival1.jpg" alt="Produk Terbaru 1">
+                <h3>Produk Terbaru 1</h3>
+                <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
             </div>
             <div class="new-arrival-item">
-                <img src="img/new-arrival2.jpg" alt="New Arrival 2">
-                <div class="arrival-info">
-                    <h3>Produk Baru 2</h3>
-                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
-                </div>
+                <img src="img/new-arrival2.jpg" alt="Produk Terbaru 2">
+                <h3>Produk Terbaru 2</h3>
+                <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
             </div>
         </div>
     </section>
@@ -83,29 +80,6 @@
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Slick slider initialization for New Arrivals
-            $('.new-arrival-slider').slick({
-                dots: true,
-                arrows: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                slidesToShow: 1,
-                slidesToScroll: 1
-            });
-
-            // Navbar scroll effect
-            $(window).scroll(function() {
-                $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
-                $('.hero').css('opacity', 1 - $(window).scrollTop() / 500);
-            });
-
-            // Hamburger menu toggle
-            $('#hamburger').click(function() {
-                $('#nav-links').toggleClass('show');
-            });
-        });
-    </script>
+    <script src="JS/script.js"></script> <!-- Pastikan jalur file JS benar -->
 </body>
 </html>
