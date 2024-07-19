@@ -17,11 +17,12 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <img src="img/logo.png" class="logo" />
-            </div>
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo.png" class="logo" alt="Logo" />
+            </a>
             <div class="nav-links" id="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -40,15 +41,44 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         </div>
     </nav>
 
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav">
+        <a href="index.html">Home</a> &gt; <a href="produk.php">Produk</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <input type="text" id="search" placeholder="Cari produk..." />
+        <button id="search-btn">Cari</button>
+    </div>
+
+    <!-- Main Content -->
     <main>
+        <!-- Product Grid -->
         <div class="product-container">
             <?php while ($row = $result->fetch_assoc()) : ?>
                 <div class="product-card">
                     <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
-                    <h2><?php echo $row['nama_produk']; ?></h2>
-                    <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Beli Sekarang</a>
+                    <div class="product-info">
+                        <h2><?php echo $row['nama_produk']; ?></h2>
+                        <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Beli Sekarang</a>
+                    </div>
                 </div>
             <?php endwhile; ?>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#" class="prev">Previous</a>
+            <a href="#" class="page">1</a>
+            <a href="#" class="page">2</a>
+            <a href="#" class="page">3</a>
+            <a href="#" class="next">Next</a>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="loading-spinner">
+            <div class="spinner"></div>
         </div>
     </main>
 
@@ -57,6 +87,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
     </footer>
 
     <script>
+        // JavaScript for Navbar Toggle
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('nav-links');
 
@@ -64,6 +95,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             navLinks.classList.toggle('show');
         });
 
+        // JavaScript for Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -71,6 +103,13 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+
+        // JavaScript for Search
+        const searchBtn = document.getElementById('search-btn');
+        searchBtn.addEventListener('click', () => {
+            const searchQuery = document.getElementById('search').value;
+            // Add search functionality here
         });
     </script>
 </body>
