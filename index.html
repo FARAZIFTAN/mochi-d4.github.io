@@ -12,74 +12,29 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-logo">
-            <img src="img/logo.png" class="logo" alt="Logo">
-        </div>
-        <div class="nav-links" id="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produk.php">Produk</a></li>
-                <li><a href="about.html">Tentang Kami</a></li>
-            </ul>
-        </div>
-        <div class="nav-actions">
-            <a href="proses_logout.php" class="logout-btn">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="proses_logout.php" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="content">
-            <h1 class="anim">Hi<br>Mochier</h1>
-            <p class="anim">Mari jelajahi keindahan rasa di Mochi, tempat di mana tiap gigitan adalah petualangan baru. Selamat datang, penikmat kuliner sejati untuk menikmati mochi!</p>
-            <a href="login.php" class="btn anim">Join Sekarang</a>
-        </div>
-    </div>
-
-    <!-- Call-to-Action Section -->
-    <div class="cta-section">
-        <div class="cta-content">
-            <h2>Special Offer!</h2>
-            <p>Get a 20% discount on your first order. Don't miss out!</p>
-            <a href="produk.php" class="btn">Shop Now</a>
-        </div>
-    </div>
-
-    <!-- Testimonial Section -->
-    <div class="testimonial-section">
-        <h2>What Our Customers Say</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial">
-                <p>"Mochi from this store is the best I've ever tasted! Highly recommend!"</p>
-                <h4>Jane Doe</h4>
-            </div>
-            <div class="testimonial">
-                <p>"The variety of flavors is amazing. Always a delightful experience!"</p>
-                <h4>John Smith</h4>
-            </div>
-            <div class="testimonial">
-                <p>"Excellent service and delicious mochi. I will definitely come back for more."</p>
-                <h4>Emily Brown</h4>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
-            <div class="newsletter">
-                <p>Subscribe to our newsletter:</p>
-                <input type="email" placeholder="Enter your email">
-                <button>Subscribe</button>
-            </div>
-        </div>
-    </footer>
+    <!-- Rest of your HTML content -->
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -101,7 +56,7 @@
 
             // Hamburger menu toggle
             $('#hamburger').click(function() {
-                $('#nav-links').toggleClass('open');
+                $('#nav-links').toggleClass('show');
             });
         });
     </script>
