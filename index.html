@@ -43,20 +43,42 @@
         </div>
     </section>
 
+    <!-- Testimonial Section -->
+    <section class="testimonials">
+        <h2>Apa Kata Pelanggan Kami?</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-item">
+                <p>"Produk mochi ini luar biasa! Rasanya sangat enak dan kualitasnya sangat baik. Saya pasti akan membeli lagi!"</p>
+                <h3>- Anna S.</h3>
+            </div>
+            <div class="testimonial-item">
+                <p>"Layanan pelanggan yang hebat dan produk yang selalu memuaskan. Highly recommended!"</p>
+                <h3>- John D.</h3>
+            </div>
+            <div class="testimonial-item">
+                <p>"Kualitas mochi yang sangat tinggi dan rasa yang tidak tertandingi. Pengalaman belanja yang menyenangkan!"</p>
+                <h3>- Lisa M.</h3>
+            </div>
+        </div>
+    </section>
+
     <!-- New Arrivals Section -->
     <section class="new-arrivals">
-        <h2>Produk Terbaru</h2>
-        <div class="new-arrival-slider">
-            <!-- Contoh item produk terbaru, salin dan sesuaikan untuk produk lain -->
+        <h2>Koleksi Terbaru</h2>
+        <div class="new-arrival-container">
             <div class="new-arrival-item">
-                <img src="img/new-arrival1.jpg" alt="Produk Terbaru 1">
-                <h3>Produk Terbaru 1</h3>
-                <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+                <img src="img/new-product1.jpg" alt="Produk Baru 1">
+                <div class="new-arrival-info">
+                    <h3>Produk Baru 1</h3>
+                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+                </div>
             </div>
             <div class="new-arrival-item">
-                <img src="img/new-arrival2.jpg" alt="Produk Terbaru 2">
-                <h3>Produk Terbaru 2</h3>
-                <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+                <img src="img/new-product2.jpg" alt="Produk Baru 2">
+                <div class="new-arrival-info">
+                    <h3>Produk Baru 2</h3>
+                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+                </div>
             </div>
         </div>
     </section>
@@ -80,6 +102,34 @@
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="JS/script.js"></script> <!-- Pastikan jalur file JS benar -->
+    <script>
+        $(document).ready(function(){
+            // Testimonial slider initialization
+            $('.testimonial-slider').slick({
+                dots: true,
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 3000,
+            });
+
+            // Navbar scroll effect
+            $(window).scroll(function() {
+                $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
+                $('.hero').css('opacity', 1 - $(window).scrollTop() / 500);
+            });
+
+            // Hamburger menu toggle
+            $('#hamburger').click(function() {
+                $('#nav-links').toggleClass('show');
+            });
+
+            // New arrivals image animation
+            $('.new-arrival-item').on('mouseenter', function() {
+                $(this).find('img').css('transform', 'scale(1.1)');
+            }).on('mouseleave', function() {
+                $(this).find('img').css('transform', 'scale(1)');
+            });
+        });
+    </script>
 </body>
 </html>
