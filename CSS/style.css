@@ -87,6 +87,7 @@ a {
     font-size: 20px;
     cursor: pointer;
     color: #333;
+    display: none; /* Hidden by default */
 }
 
 /* Hero Section */
@@ -160,51 +161,63 @@ a {
     color: #ff69b4; /* Warna pink untuk nama */
 }
 
-/* New Arrivals Section */
-.new-arrivals {
+/* Promo Special Section */
+.promo-special {
     padding: 50px 20px;
     background: #fff;
     text-align: center;
 }
 
-.new-arrivals h2 {
+.promo-special h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 32px; /* Ukuran font lebih besar untuk judul */
+    font-size: 32px;
     margin-bottom: 30px;
+    color: #ff69b4; /* Warna judul dengan efek pink */
 }
 
-.new-arrival-container {
+.promo-container {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.new-arrival-item {
+.promo-item {
     background: #f7f7f7;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     width: 300px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.new-arrival-item img {
+.promo-item img {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
-    margin-bottom: 15px; /* Menambahkan jarak bawah pada gambar */
 }
 
-.new-arrival-info {
+.promo-info {
     padding: 20px;
 }
 
-.new-arrival-info h3 {
+.promo-info h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 24px; /* Ukuran font lebih besar untuk nama produk */
+    font-size: 24px;
     margin-bottom: 10px;
+    color: #ff69b4; /* Warna pink untuk judul promo */
+}
+
+.promo-info p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.promo-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styles */
@@ -238,4 +251,43 @@ a {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default on small screens */
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background: #ffffff;
+    }
+
+    .nav-links.show {
+        display: flex; /* Show nav links when hamburger is clicked */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger menu button */
+    }
+
+    .nav-container {
+        flex-direction: column;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #ddd;
+    }
 }

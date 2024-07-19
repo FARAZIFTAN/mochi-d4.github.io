@@ -62,22 +62,24 @@
         </div>
     </section>
 
-    <!-- New Arrivals Section -->
-    <section class="new-arrivals">
-        <h2>Koleksi Terbaru</h2>
-        <div class="new-arrival-container">
-            <div class="new-arrival-item">
-                <img src="img/new-product1.jpg" alt="Produk Baru 1">
-                <div class="new-arrival-info">
-                    <h3>Produk Baru 1</h3>
-                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+    <!-- Promo Special Section -->
+    <section class="promo-special">
+        <h2>Promo Spesial Kami</h2>
+        <div class="promo-container">
+            <div class="promo-item">
+                <img src="img/promo1.jpg" alt="Promo 1">
+                <div class="promo-info">
+                    <h3>Promo 1</h3>
+                    <p>Dapatkan diskon besar untuk produk pilihan.</p>
+                    <a href="promo.php" class="btn-primary">Lihat Selengkapnya</a>
                 </div>
             </div>
-            <div class="new-arrival-item">
-                <img src="img/new-product2.jpg" alt="Produk Baru 2">
-                <div class="new-arrival-info">
-                    <h3>Produk Baru 2</h3>
-                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+            <div class="promo-item">
+                <img src="img/promo2.jpg" alt="Promo 2">
+                <div class="promo-info">
+                    <h3>Promo 2</h3>
+                    <p>Penawaran eksklusif hanya untuk Anda.</p>
+                    <a href="promo.php" class="btn-primary">Lihat Selengkapnya</a>
                 </div>
             </div>
         </div>
@@ -103,7 +105,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function() {
             // Testimonial slider initialization
             $('.testimonial-slider').slick({
                 dots: true,
@@ -112,22 +114,25 @@
                 autoplaySpeed: 3000,
             });
 
-            // Navbar scroll effect
-            $(window).scroll(function() {
-                $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
-                $('.hero').css('opacity', 1 - $(window).scrollTop() / 500);
-            });
-
             // Hamburger menu toggle
             $('#hamburger').click(function() {
                 $('#nav-links').toggleClass('show');
             });
 
             // New arrivals image animation
-            $('.new-arrival-item').on('mouseenter', function() {
+            $('.promo-item').on('mouseenter', function() {
                 $(this).find('img').css('transform', 'scale(1.1)');
             }).on('mouseleave', function() {
                 $(this).find('img').css('transform', 'scale(1)');
+            });
+
+            // Navbar scroll effect
+            $(window).on('scroll', function() {
+                if ($(window).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                }
             });
         });
     </script>
