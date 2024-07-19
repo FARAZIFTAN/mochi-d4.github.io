@@ -43,39 +43,20 @@
         </div>
     </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonials">
-        <h2>Apa Kata Pelanggan Kami?</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial-item">
-                <p>"Produk mochi ini luar biasa! Rasanya sangat enak dan kualitasnya sangat baik. Saya pasti akan membeli lagi!"</p>
-                <h3>- Anna S.</h3>
-            </div>
-            <div class="testimonial-item">
-                <p>"Layanan pelanggan yang hebat dan produk yang selalu memuaskan. Highly recommended!"</p>
-                <h3>- John D.</h3>
-            </div>
-            <div class="testimonial-item">
-                <p>"Kualitas mochi yang sangat tinggi dan rasa yang tidak tertandingi. Pengalaman belanja yang menyenangkan!"</p>
-                <h3>- Lisa M.</h3>
-            </div>
-        </div>
-    </section>
-
     <!-- New Arrivals Section -->
     <section class="new-arrivals">
-        <h2>Koleksi Terbaru</h2>
-        <div class="new-arrival-container">
+        <h2>Produk Terbaru</h2>
+        <div class="new-arrival-slider">
             <div class="new-arrival-item">
-                <img src="img/new-product1.jpg" alt="Produk Baru 1">
-                <div class="new-arrival-info">
+                <img src="img/new-arrival1.jpg" alt="New Arrival 1">
+                <div class="arrival-info">
                     <h3>Produk Baru 1</h3>
                     <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
                 </div>
             </div>
             <div class="new-arrival-item">
-                <img src="img/new-product2.jpg" alt="Produk Baru 2">
-                <div class="new-arrival-info">
+                <img src="img/new-arrival2.jpg" alt="New Arrival 2">
+                <div class="arrival-info">
                     <h3>Produk Baru 2</h3>
                     <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
                 </div>
@@ -104,12 +85,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         $(document).ready(function(){
-            // Testimonial slider initialization
-            $('.testimonial-slider').slick({
+            // Slick slider initialization for New Arrivals
+            $('.new-arrival-slider').slick({
                 dots: true,
-                arrows: false,
+                arrows: true,
                 autoplay: true,
                 autoplaySpeed: 3000,
+                slidesToShow: 1,
+                slidesToScroll: 1
             });
 
             // Navbar scroll effect
@@ -121,13 +104,6 @@
             // Hamburger menu toggle
             $('#hamburger').click(function() {
                 $('#nav-links').toggleClass('show');
-            });
-
-            // New arrivals image animation
-            $('.new-arrival-item').on('mouseenter', function() {
-                $(this).find('img').css('transform', 'scale(1.1)');
-            }).on('mouseleave', function() {
-                $(this).find('img').css('transform', 'scale(1)');
             });
         });
     </script>
