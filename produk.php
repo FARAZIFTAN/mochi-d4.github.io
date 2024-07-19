@@ -11,7 +11,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Mochi</title>
+    <title>Website Mochi - Produk</title>
     <link rel="stylesheet" href="CSS/style.css" />
     <link rel="stylesheet" href="CSS/style_produk.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
@@ -21,7 +21,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
     <div class="hero">
         <nav class="navbar">
             <div class="nav-logo">
-                <img src="img/logo.png" class="logo" />
+                <img src="img/logo.png" class="logo" alt="Logo" />
             </div>
             <div class="nav-links" id="nav-links">
                 <ul>
@@ -50,9 +50,9 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             <div class="product-container">
                 <?php while ($row = $result->fetch_assoc()) : ?>
                     <div class="product-card anim">
-                        <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
-                        <h2><?php echo $row['nama_produk']; ?></h2>
-                        <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn anim">Beli Sekarang</a>
+                        <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_produk']); ?>">
+                        <h2><?php echo htmlspecialchars($row['nama_produk']); ?></h2>
+                        <a href="detail_produk/<?php echo htmlspecialchars($row['detail_halaman']); ?>.php?id=<?php echo htmlspecialchars($row['id']); ?>" class="btn anim">Beli Sekarang</a>
                     </div>
                 <?php endwhile; ?>
             </div>
