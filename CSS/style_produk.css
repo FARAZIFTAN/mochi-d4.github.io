@@ -5,27 +5,38 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f9f9f9;
+    background-image: url('pattern.png');
+    background-repeat: repeat;
+    background-size: 150px 150px;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff69b4; /* Your pink shade */
 }
 
 /* Navbar Styles */
 .navbar {
-    background: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+    background: rgba(255, 105, 180, 0.8);
+    backdrop-filter: blur(10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    padding: 10px 20px;
 }
 
 .navbar.scrolled {
-    background: #fff;
+    background: rgba(255, 20, 147, 0.9);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -33,16 +44,24 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .nav-logo img {
     max-height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
 }
 
 .nav-links {
     display: flex;
-    gap: 30px; /* Increased gap between menu items */
+    gap: 30px;
+    align-items: center;
 }
 
 .nav-links ul {
@@ -58,27 +77,29 @@ a {
 
 .nav-links a {
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    color: #fff;
     font-size: 16px;
-    padding: 10px 15px; /* Added padding for better spacing */
+    padding: 10px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-links a:hover {
-    background-color: #ff69b4; /* Your pink shade */
+    background-color: #ff1493; /* Your pink shade */
     color: #fff;
+    transform: translateY(-3px);
 }
 
 .nav-actions {
     display: flex;
-    gap: 15px; /* Slightly larger gap between action buttons */
+    gap: 15px;
     align-items: center;
+    position: relative; /* Ensure proper positioning */
 }
 
 .logout-btn i {
     font-size: 20px;
-    color: #333;
+    color: #fff;
 }
 
 .hamburger {
@@ -86,24 +107,59 @@ a {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #333; /* Ensures the hamburger icon color matches the theme */
+    color: #fff;
+    display: none;
+    z-index: 1010; /* Ensure it is above other elements */
+    margin-right: 10px; /* Adjust spacing if necessary */
 }
 
-/* Breadcrumb Navigation */
-.breadcrumb-nav {
-    padding: 15px 20px;
-    background: #f7f7f7;
-    border-bottom: 1px solid #e0e0e0;
-    font-family: 'Montserrat', sans-serif;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(255, 105, 180, 0.9);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+    
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-links li {
+        margin: 0;
+    }
+    
+    .nav-links a {
+        padding: 15px 20px;
+        text-align: center;
+        border-bottom: 1px solid #fff;
+    }
 
-.breadcrumb-nav a {
-    color: #333;
-    text-decoration: none;
-}
-
-.breadcrumb-nav a:hover {
-    color: #ff69b4; /* Your pink shade */
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+    
+    .hamburger {
+        display: block;
+        margin: 0; /* Remove any unwanted margin */
+        padding: 0; /* Remove any unwanted padding */
+        position: absolute; /* Position it absolutely within nav-actions */
+        top: 50%; /* Center vertically */
+        right: 20px; /* Adjust horizontal position */
+        transform: translateY(-50%); /* Center vertically */
+    }
 }
 
 /* Main Content */
@@ -211,25 +267,16 @@ main {
     100% { transform: rotate(360deg); }
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide links on mobile */
-        flex-direction: column;
-        gap: 10px;
-        background: #fff;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+/* Footer */
+footer {
+    background: #ff1493; /* Your pink shade */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
 
-    .nav-links.show {
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 15px 20px;
-    }
+footer p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
