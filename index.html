@@ -1,110 +1,245 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Mochi</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="img/logo.png" alt="Logo">
-            </div>
-            <div class="nav-links" id="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produk.php">Produk</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                </ul>
-            </div>
-            <div class="nav-actions">
-                <a href="proses_logout.php" class="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Selamat Datang di Website Mochi!</h1>
-            <p>Temukan berbagai produk menarik dan tawaran spesial hanya untuk Anda.</p>
-            <a href="produk.php" class="btn-primary">Lihat Produk</a>
-        </div>
-    </section>
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-    <!-- Featured Products Section -->
-    <section class="featured-products">
-        <h2>Produk Unggulan</h2>
-        <div class="product-container">
-            <!-- Contoh kartu produk, salin dan sesuaikan untuk produk lain -->
-            <div class="product-card">
-                <img src="img/product1.jpg" alt="Produk 1">
-                <div class="product-info">
-                    <h2>Produk 1</h2>
-                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="img/product2.jpg" alt="Produk 2">
-                <div class="product-info">
-                    <h2>Produk 2</h2>
-                    <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
-                </div>
-            </div>
-        </div>
-    </section>
+/* Navbar Styles */
+.navbar {
+    background: rgba(255, 255, 255, 0.6) url('img/mochi-background.jpg') no-repeat center center; /* Gambar background navbar */
+    background-size: cover; /* Pastikan gambar menutupi seluruh navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="img/logo.png" alt="Logo">
-            </div>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produk.php">Produk</a></li>
-                <li><a href="about.html">Tentang Kami</a></li>
-                <li><a href="contact.html">Kontak</a></li>
-            </ul>
-            <p>&copy; 2024 Website Mochi. Semua hak cipta dilindungi.</p>
-        </div>
-    </footer>
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.9) url('img/mochi-background.jpg') no-repeat center center; /* Latar belakang sedikit opak saat scroll */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Testimonial slider initialization
-            $('.testimonial-slider').slick({
-                dots: true,
-                arrows: false,
-                autoplay: true,
-                autoplaySpeed: 3000,
-            });
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
 
-            // Navbar scroll effect
-            $(window).scroll(function() {
-                $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
-                $('.hero').css('opacity', 1 - $(window).scrollTop() / 500);
-            });
+.nav-logo img {
+    max-height: 50px;
+}
 
-            // Hamburger menu toggle
-            $('#hamburger').click(function() {
-                $('#nav-links').toggleClass('show');
-            });
-        });
-    </script>
-</body>
-</html>
+.nav-links {
+    display: flex;
+    gap: 30px; /* Jarak antar item menu */
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px; /* Padding untuk jarak yang lebih baik */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ff69b4; /* Warna pink */
+    color: #fff;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 15px; /* Jarak antar tombol aksi */
+    align-items: center;
+}
+
+.logout-btn i {
+    font-size: 20px;
+    color: #333;
+}
+
+.hamburger {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333; /* Warna ikon hamburger */
+}
+
+/* Hero Section */
+.hero {
+    background: url('mochi1.jpeg') no-repeat center center; /* Gambar background hero */
+    background-size: cover;
+    color: #fff;
+    padding: 100px 20px; /* Sesuaikan padding sesuai kebutuhan */
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #ff69b4; /* Warna pink */
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #ff1493; /* Pink lebih gelap untuk hover */
+}
+
+/* Featured Products Section */
+.featured-products {
+    padding: 50px 20px;
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.featured-products h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.product-info .btn-primary {
+    background-color: #ff69b4; /* Warna pink */
+    padding: 10px 15px;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-height: 50px;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Sembunyikan link di mobile */
+        flex-direction: column;
+        gap: 10px;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 15px 20px;
+    }
+
+    .featured-products .product-container {
+        grid-template-columns: 1fr;
+    }
+}
