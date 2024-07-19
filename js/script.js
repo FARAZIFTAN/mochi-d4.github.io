@@ -1,19 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
-    const heroHeight = document.querySelector('.hero').offsetHeight;
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
     window.addEventListener('scroll', function() {
-        if (window.scrollY > heroHeight) {
+        if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
     });
-
-    // Hamburger Menu Toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
 
     hamburger.addEventListener('click', function() {
         navLinks.classList.toggle('show');
