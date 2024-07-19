@@ -12,6 +12,12 @@
     --secondary-color: #ffb88c; /* Light Orange */
     --header-text-color: #fff; /* White */
     --text-color: #484848; /* Dark Gray */
+    --heading-color: #ff69b4; /* Pink for headings */
+    --nav-link-color: #fff; /* White for navigation links */
+    --button-text-color: #fff; /* White for button text */
+    --cta-heading-color: #fff; /* White for CTA headings */
+    --testimonial-text-color: #484848; /* Dark Gray for testimonial text */
+    --testimonial-heading-color: #ff69b4; /* Pink for testimonial headings */
 }
 
 /* Navbar Styles */
@@ -49,7 +55,7 @@
 
 .nav-links ul li a {
     text-decoration: none;
-    color: var(--header-text-color);
+    color: var(--nav-link-color); /* White */
     font-family: 'Montserrat', sans-serif; /* Font untuk link navbar */
     font-weight: bold;
     transition: color 0.3s ease;
@@ -66,7 +72,7 @@
 
 .logout-btn {
     text-decoration: none;
-    color: var(--header-text-color);
+    color: var(--nav-link-color); /* White */
     margin-right: 15px;
     font-weight: 400;
     display: flex;
@@ -81,7 +87,7 @@
 .hamburger {
     display: none;
     font-size: 24px;
-    color: var(--header-text-color);
+    color: var(--nav-link-color); /* White */
     background: none;
     border: none;
     cursor: pointer;
@@ -124,12 +130,14 @@
     margin-bottom: 20px;
     line-height: 1.2;
     font-family: 'Lobster', cursive; /* Font untuk judul */
+    color: var(--heading-color); /* Pink */
     animation: fadeIn 1s forwards;
 }
 
 .content p {
     margin: 20px 0 30px;
     font-size: 1.2rem;
+    color: var(--header-text-color); /* White */
     animation: fadeIn 1.5s forwards;
 }
 
@@ -137,7 +145,7 @@
     display: inline-block;
     text-decoration: none;
     padding: 14px 40px;
-    color: #fff;
+    color: var(--button-text-color); /* White */
     background: linear-gradient(40deg, #ffacc8, #ff69b4);
     border-radius: 30px;
     border-top-right-radius: 0;
@@ -163,18 +171,20 @@
     font-size: 2.5rem;
     margin-bottom: 20px;
     font-family: 'Lobster', cursive; /* Font untuk heading di CTA */
+    color: var(--cta-heading-color); /* White */
 }
 
 .cta-content p {
     font-size: 1.2rem;
     margin-bottom: 30px;
+    color: var(--header-text-color); /* White */
 }
 
 .cta-content .btn {
     text-decoration: none;
     padding: 12px 30px;
     background: #fff;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Pink */
     border-radius: 30px;
     transition: 0.3s;
 }
@@ -208,7 +218,7 @@
 .testimonial-section h2 {
     font-size: 2.5rem;
     margin-bottom: 30px;
-    color: var(--text-color);
+    color: var(--testimonial-heading-color); /* Pink */
     position: relative;
     z-index: 1;
     font-family: 'Lobster', cursive; /* Font untuk heading testimonial */
@@ -235,7 +245,7 @@
 
 .testimonial p {
     font-size: 1.2rem;
-    color: var(--text-color);
+    color: var(--testimonial-text-color); /* Dark Gray */
     margin-bottom: 15px;
     line-height: 1.6;
     font-family: 'Poppins', sans-serif; /* Font untuk teks testimonial */
@@ -243,7 +253,7 @@
 
 .testimonial h4 {
     font-size: 1.1rem;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Pink */
     font-weight: bold;
     margin-top: 10px;
     font-family: 'Montserrat', sans-serif; /* Font untuk nama pelanggan */
@@ -252,7 +262,7 @@
 /* Footer */
 footer {
     background-color: var(--primary-color);
-    color: var(--header-text-color);
+    color: var(--header-text-color); /* White */
     text-align: center;
     padding: 20px 0;
 }
