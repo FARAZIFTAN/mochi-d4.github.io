@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Default font */
 }
 
 /* Variables for colors */
@@ -50,6 +50,7 @@
 .nav-links ul li a {
     text-decoration: none;
     color: var(--header-text-color);
+    font-family: 'Montserrat', sans-serif; /* Font untuk link navbar */
     font-weight: bold;
     transition: color 0.3s ease;
 }
@@ -70,6 +71,7 @@
     font-weight: 400;
     display: flex;
     align-items: center;
+    font-family: 'Montserrat', sans-serif; /* Font untuk tombol logout */
 }
 
 .logout-btn i {
@@ -121,6 +123,7 @@
     font-size: 4rem;
     margin-bottom: 20px;
     line-height: 1.2;
+    font-family: 'Lobster', cursive; /* Font untuk judul */
     animation: fadeIn 1s forwards;
 }
 
@@ -138,6 +141,7 @@
     background: linear-gradient(40deg, #ffacc8, #ff69b4);
     border-radius: 30px;
     border-top-right-radius: 0;
+    font-family: 'Montserrat', sans-serif; /* Font untuk tombol */
     transition: 0.5s;
     animation: fadeIn 2s forwards;
 }
@@ -158,6 +162,7 @@
 .cta-content h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    font-family: 'Lobster', cursive; /* Font untuk heading di CTA */
 }
 
 .cta-content p {
@@ -206,6 +211,7 @@
     color: var(--text-color);
     position: relative;
     z-index: 1;
+    font-family: 'Lobster', cursive; /* Font untuk heading testimonial */
 }
 
 .testimonial-slider {
@@ -232,6 +238,7 @@
     color: var(--text-color);
     margin-bottom: 15px;
     line-height: 1.6;
+    font-family: 'Poppins', sans-serif; /* Font untuk teks testimonial */
 }
 
 .testimonial h4 {
@@ -239,6 +246,7 @@
     color: var(--primary-color);
     font-weight: bold;
     margin-top: 10px;
+    font-family: 'Montserrat', sans-serif; /* Font untuk nama pelanggan */
 }
 
 /* Footer */
