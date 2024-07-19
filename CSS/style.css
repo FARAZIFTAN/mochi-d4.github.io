@@ -92,7 +92,9 @@
     padding: 10px 10%;
     overflow: hidden;
     position: relative;
-    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat;
+    /* background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat; */
+    background: url('mochi1.jpeg') center/cover no-repeat;
+    filter: blur(8px);
 }
 
 .hero::before {
