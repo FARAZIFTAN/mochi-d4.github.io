@@ -18,23 +18,25 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 
 <body>
     <nav class="navbar">
-        <div class="nav-logo">
-            <img src="img/logo.png" class="logo" />
-        </div>
-        <div class="nav-links" id="nav-links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produk.php">Produk</a></li>
-                <li><a href="about.html">Tentang Kami</a></li>
-            </ul>
-        </div>
-        <div class="nav-actions">
-            <a href="proses_logout.php" class="logout-btn">
-                <i class="fas fa-sign-out-alt"></i>
-            </a>
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="img/logo.png" class="logo" />
+            </div>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="proses_logout.php" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
