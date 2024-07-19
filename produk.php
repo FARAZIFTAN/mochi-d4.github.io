@@ -11,56 +11,58 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website Mochi - Produk</title>
-    <link rel="stylesheet" href="CSS/style.css" />
+    <title>Produk - Website Mochi</title>
     <link rel="stylesheet" href="CSS/style_produk.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 
 <body>
-    <div class="hero">
-        <nav class="navbar">
-            <div class="nav-logo">
-                <img src="img/logo.png" class="logo" alt="Logo" />
-            </div>
-            <div class="nav-links" id="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produk.php">Produk</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                </ul>
-            </div>
-            <div class="nav-actions">
-                <a href="proses_logout.php" class="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <?php
-                session_start();
-                if (!isset($_SESSION['username'])) {
-                    header("Location: login.php");
-                    exit();
-                }
-                ?>
-            </div>
-        </nav>
-        <main>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <img src="img/logo.png" class="logo" />
+        </div>
+        <div class="nav-links" id="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.php">Produk</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+            </ul>
+        </div>
+        <div class="nav-actions">
+            <a href="proses_logout.php" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+            </a>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <?php
+            session_start();
+            if (!isset($_SESSION['username'])) {
+                header("Location: login.php");
+                exit();
+            }
+            ?>
+        </div>
+    </nav>
+    <main>
+        <section class="product-section">
+            <h1>Produk Kami</h1>
             <div class="product-container">
                 <?php while ($row = $result->fetch_assoc()) : ?>
-                    <div class="product-card anim">
-                        <img src="<?php echo htmlspecialchars($row['gambar']); ?>" alt="<?php echo htmlspecialchars($row['nama_produk']); ?>">
-                        <h2><?php echo htmlspecialchars($row['nama_produk']); ?></h2>
-                        <a href="detail_produk/<?php echo htmlspecialchars($row['detail_halaman']); ?>.php?id=<?php echo htmlspecialchars($row['id']); ?>" class="btn anim">Beli Sekarang</a>
+                    <div class="product-card">
+                        <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
+                        <div class="product-info">
+                            <h2><?php echo $row['nama_produk']; ?></h2>
+                            <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Beli Sekarang</a>
+                        </div>
                     </div>
                 <?php endwhile; ?>
             </div>
-        </main>
-        <footer>
-            <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
-        </footer>
-    </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
+    </footer>
 
     <script>
         const hamburger = document.getElementById('hamburger');
@@ -68,6 +70,16 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('show');
+        });
+
+        // Add scroll event listener for navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
         });
     </script>
 </body>
