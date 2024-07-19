@@ -34,7 +34,47 @@
         </div>
     </nav>
 
-    <!-- Rest of your HTML content -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Selamat Datang di Website Mochi!</h1>
+            <p>Temukan berbagai produk menarik dan tawaran spesial hanya untuk Anda.</p>
+            <a href="produk.php" class="btn-primary">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo">
+        <h2>Penawaran Spesial</h2>
+        <div class="promo-grid">
+            <div class="promo-item">
+                <img src="img/promo1.jpg" alt="Promo 1">
+                <h3>Diskon 20%</h3>
+                <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+            </div>
+            <div class="promo-item">
+                <img src="img/promo2.jpg" alt="Promo 2">
+                <h3>Beli 1 Gratis 1</h3>
+                <a href="produk.php" class="btn-primary">Lihat Selengkapnya</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="produk.php">Produk</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+            <p>&copy; 2024 Website Mochi. Semua hak cipta dilindungi.</p>
+        </div>
+    </footer>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -52,6 +92,7 @@
             // Navbar scroll effect
             $(window).scroll(function() {
                 $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
+                $('.hero').css('opacity', 1 - $(window).scrollTop() / 500);
             });
 
             // Hamburger menu toggle
