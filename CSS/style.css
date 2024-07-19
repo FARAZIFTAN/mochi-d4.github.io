@@ -92,7 +92,7 @@ a {
 
 /* Hero Section */
 .hero {
-    background: url('img/mochi1.jpeg') no-repeat center center;
+    background: url('mochi1.jpeg') no-repeat center center;
     background-size: cover;
     color: #fff;
     padding: 100px 20px;
