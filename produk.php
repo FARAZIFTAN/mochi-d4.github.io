@@ -59,7 +59,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                     <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
                     <div class="product-info">
                         <h2><?php echo $row['nama_produk']; ?></h2>
-                        <a href="detail produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Beli Sekarang</a>
+                        <a href="detail produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Detail Produk</a>
                     </div>
                 </div>
             <?php endwhile; ?>
