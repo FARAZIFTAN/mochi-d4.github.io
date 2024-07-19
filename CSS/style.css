@@ -92,9 +92,12 @@
     padding: 10px 10%;
     overflow: hidden;
     position: relative;
-    /* background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat; */
     background: url('mochi1.jpeg') center/cover no-repeat;
-    filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
 }
 
 .hero::before {
@@ -104,26 +107,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
-/* Content Styles */
 .content {
-    margin-top: 10%;
     max-width: 600px;
-    text-align: center;
-    color: #fff;
+    animation: fadeIn 1s forwards;
 }
 
 .content h1 {
-    font-size: 70px;
+    font-size: 4rem;
     margin-bottom: 20px;
+    line-height: 1.2;
     animation: fadeIn 1s forwards;
 }
 
 .content p {
-    margin: 10px 0 30px;
+    margin: 20px 0 30px;
+    font-size: 1.2rem;
     animation: fadeIn 1.5s forwards;
 }
 
@@ -150,16 +152,15 @@
     background: linear-gradient(40deg, #ffacc8, #ff69b4);
     color: #fff;
     text-align: center;
-    position: relative;
 }
 
 .cta-content h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     margin-bottom: 20px;
 }
 
 .cta-content p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
@@ -173,7 +174,8 @@
 }
 
 .cta-content .btn:hover {
-    background: #ff69b4;
+    background: var(--secondary-color);
+    color: #fff;
 }
 
 /* Testimonial Section */
@@ -198,7 +200,7 @@
 }
 
 .testimonial-section h2 {
-    font-size: 2.5em;
+    font-size: 2.5rem;
     margin-bottom: 30px;
     color: var(--text-color);
     position: relative;
@@ -225,14 +227,14 @@
 }
 
 .testimonial p {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: var(--text-color);
     margin-bottom: 15px;
     line-height: 1.6;
 }
 
 .testimonial h4 {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     color: var(--primary-color);
     font-weight: bold;
     margin-top: 10px;
@@ -244,8 +246,6 @@ footer {
     color: var(--header-text-color);
     text-align: center;
     padding: 20px 0;
-    position: relative;
-    z-index: 2;
 }
 
 .footer-content {
@@ -256,22 +256,7 @@ footer {
 
 .footer-content p {
     margin: 0;
-    font-size: 0.9em;
-}
-
-.social-icons {
-    margin: 10px 0;
-}
-
-.social-icons a {
-    color: #fff;
-    margin: 0 10px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-    color: #ff69b4;
+    font-size: 0.9rem;
 }
 
 .newsletter {
@@ -302,7 +287,7 @@ footer {
 }
 
 .newsletter button:hover {
-    background-color: #ff69b4;
+    background-color: #ffb88c;
 }
 
 /* Responsive Design */
@@ -333,7 +318,7 @@ footer {
     }
 
     .nav-links ul li a {
-        font-size: 1.2em;
+        font-size: 1.2rem;
     }
 
     .hamburger {
@@ -345,11 +330,11 @@ footer {
     }
 
     .content h1 {
-        font-size: 50px;
+        font-size: 3rem;
     }
 
     .testimonial p {
-        font-size: 1em;
+        font-size: 1rem;
     }
 }
 
