@@ -1,30 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('.navbar');
-    const hamburger = document.getElementById('hamburger');
+// Toggle navbar links on hamburger click
+document.getElementById('hamburger').addEventListener('click', function() {
     const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('show');
+});
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+// Change navbar style on scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
 
-    hamburger.addEventListener('click', function() {
-        navLinks.classList.toggle('show');
-        hamburger.classList.toggle('is-active');
-    });
-
-    // Initialize slick slider for testimonials
+// Initialize testimonial slider
+$(document).ready(function(){
     $('.testimonial-slider').slick({
-        dots: true,
-        arrows: true,
         autoplay: true,
         autoplaySpeed: 3000,
+        arrows: true,
+        dots: true,
         infinite: true,
-        prevArrow: '<button type="button" class="slick-prev">←</button>',
-        nextArrow: '<button type="button" class="slick-next">→</button>',
-        appendArrows: '.testimonial-slider-controls'
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
     });
 });
