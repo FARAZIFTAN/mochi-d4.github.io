@@ -100,13 +100,14 @@ a {
 
 .hero-content h1 {
     font-family: 'Poppins', sans-serif;
-    font-size: 36px;
+    font-size: 40px; /* Ukuran font lebih besar untuk lebih menonjol */
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Menambahkan efek bayangan untuk keterbacaan */
 }
 
 .hero-content p {
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 20px; /* Ukuran font sedikit lebih besar untuk visibilitas */
     margin-bottom: 30px;
 }
 
@@ -135,7 +136,7 @@ a {
 
 .testimonials h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: 32px; /* Ukuran font lebih besar untuk judul */
     margin-bottom: 30px;
 }
 
@@ -168,7 +169,7 @@ a {
 
 .new-arrivals h2 {
     font-family: 'Poppins', sans-serif;
-    font-size: 28px;
+    font-size: 32px; /* Ukuran font lebih besar untuk judul */
     margin-bottom: 30px;
 }
 
@@ -202,7 +203,7 @@ a {
 
 .new-arrival-info h3 {
     font-family: 'Poppins', sans-serif;
-    font-size: 22px;
+    font-size: 24px; /* Ukuran font lebih besar untuk nama produk */
     margin-bottom: 10px;
 }
 
