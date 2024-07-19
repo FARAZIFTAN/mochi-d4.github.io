@@ -94,6 +94,7 @@ a:hover {
     display: flex;
     gap: 15px;
     align-items: center;
+    position: relative; /* Ensure proper positioning */
 }
 
 .logout-btn i {
@@ -108,6 +109,8 @@ a:hover {
     cursor: pointer;
     color: #fff;
     display: none;
+    z-index: 1010; /* Ensure it is above other elements */
+    margin-right: 10px; /* Adjust spacing if necessary */
 }
 
 /* Responsive Styles */
@@ -150,6 +153,12 @@ a:hover {
     
     .hamburger {
         display: block;
+        margin: 0; /* Remove any unwanted margin */
+        padding: 0; /* Remove any unwanted padding */
+        position: absolute; /* Position it absolutely within nav-actions */
+        top: 50%; /* Center vertically */
+        right: 20px; /* Adjust horizontal position */
+        transform: translateY(-50%); /* Center vertically */
     }
 }
 
