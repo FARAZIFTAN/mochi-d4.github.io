@@ -193,6 +193,7 @@ a {
     width: 100%;
     height: auto;
     transition: transform 0.3s ease;
+    margin-bottom: 15px; /* Menambahkan jarak bawah pada gambar */
 }
 
 .new-arrival-info {
