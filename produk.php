@@ -35,31 +35,21 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             <button class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </button>
-            <?php
-            session_start();
-            if (!isset($_SESSION['username'])) {
-                header("Location: login.php");
-                exit();
-            }
-            ?>
         </div>
     </nav>
+
     <main>
-        <section class="product-section">
-            <h1>Produk Kami</h1>
-            <div class="product-container">
-                <?php while ($row = $result->fetch_assoc()) : ?>
-                    <div class="product-card">
-                        <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
-                        <div class="product-info">
-                            <h2><?php echo $row['nama_produk']; ?></h2>
-                            <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Beli Sekarang</a>
-                        </div>
-                    </div>
-                <?php endwhile; ?>
-            </div>
-        </section>
+        <div class="product-container">
+            <?php while ($row = $result->fetch_assoc()) : ?>
+                <div class="product-card">
+                    <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
+                    <h2><?php echo $row['nama_produk']; ?></h2>
+                    <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Beli Sekarang</a>
+                </div>
+            <?php endwhile; ?>
+        </div>
     </main>
+
     <footer>
         <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
     </footer>
@@ -72,7 +62,6 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             navLinks.classList.toggle('show');
         });
 
-        // Add scroll event listener for navbar
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
