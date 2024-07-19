@@ -8,9 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <style>
-        /* Additional styles specific to this page can go here */
-    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -69,10 +66,6 @@
                 <p>"Excellent service and delicious mochi. I will definitely come back for more."</p>
                 <h4>Emily Brown</h4>
             </div>
-            <div class="testimonial">
-                <p>"Excellent service and delicious mochi. I will definitely come back for more."</p>
-                <h4>Emily Brown</h4>
-            </div>
         </div>
     </div>
 
@@ -103,11 +96,7 @@
 
             // Navbar scroll effect
             $(window).scroll(function() {
-                if ($(this).scrollTop() > 50) {
-                    $('.navbar').addClass('scrolled');
-                } else {
-                    $('.navbar').removeClass('scrolled');
-                }
+                $('.navbar').toggleClass('scrolled', $(this).scrollTop() > 50);
             });
 
             // Hamburger menu toggle
