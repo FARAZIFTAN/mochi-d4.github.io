@@ -254,13 +254,16 @@ a {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .nav-links {
         display: none; /* Hide nav links by default on small screens */
         flex-direction: column;
         gap: 0;
         width: 100%;
         background: #ffffff;
+        position: absolute;
+        top: 70px;
+        left: 0;
     }
 
     .nav-links.show {
@@ -289,5 +292,35 @@ a {
         padding: 15px;
         text-align: center;
         border-top: 1px solid #ddd;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px; /* Ukuran font lebih kecil untuk layar yang lebih kecil */
+    }
+
+    .hero-content p {
+        font-size: 18px; /* Ukuran font lebih kecil untuk layar yang lebih kecil */
+    }
+
+    .testimonial-slider {
+        width: 90%;
+    }
+
+    .promo-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .promo-item {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .footer-links {
+        text-align: center;
     }
 }
