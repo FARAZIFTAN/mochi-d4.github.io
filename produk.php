@@ -109,7 +109,27 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         const searchBtn = document.getElementById('search-btn');
         searchBtn.addEventListener('click', () => {
             const searchQuery = document.getElementById('search').value;
-            // Add search functionality here
+            if (searchQuery) {
+                // Implement search functionality here, e.g., redirect to a search results page
+                window.location.href = `search_results.php?query=${encodeURIComponent(searchQuery)}`;
+            }
+        });
+
+        // JavaScript for Loading Spinner (Simulating Data Loading)
+        window.addEventListener('load', () => {
+            const loadingSpinner = document.getElementById('loading-spinner');
+            loadingSpinner.style.display = 'none'; // Hide spinner when page is loaded
+        });
+
+        // Show loading spinner while fetching data (useful for dynamic data loading)
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingSpinner = document.getElementById('loading-spinner');
+            loadingSpinner.style.display = 'block'; // Show spinner when data is being loaded
+
+            // Simulate data fetching with a timeout
+            setTimeout(() => {
+                loadingSpinner.style.display = 'none'; // Hide spinner after data is loaded
+            }, 2000); // Adjust timeout as needed
         });
     </script>
 </body>
