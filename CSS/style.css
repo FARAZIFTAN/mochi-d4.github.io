@@ -8,7 +8,7 @@
 
 /* Variables for colors */
 :root {
-    --primary-color: #ff6f61; /* Pink */
+    --primary-color: #ff69b4; /* Pink */
     --secondary-color: #ffb88c; /* Light Orange */
     --header-text-color: #fff; /* White */
     --text-color: #484848; /* Dark Gray */
@@ -132,7 +132,7 @@
     text-decoration: none;
     padding: 14px 40px;
     color: #fff;
-    background: linear-gradient(40deg, #ffacc8, #f46d6d);
+    background: linear-gradient(40deg, #ffacc8, #ff69b4);
     border-radius: 30px;
     border-top-right-radius: 0;
     transition: 0.5s;
@@ -141,13 +141,13 @@
 
 .content .btn:hover {
     border-top-right-radius: 30px;
-    background: linear-gradient(40deg, #f46d6d, #ffacc8);
+    background: linear-gradient(40deg, #ff69b4, #ffacc8);
 }
 
 /* Call-to-Action Section */
 .cta-section {
     padding: 50px 10%;
-    background: linear-gradient(40deg, #ffacc8, #f46d6d);
+    background: linear-gradient(40deg, #ffacc8, #ff69b4);
     color: #fff;
     text-align: center;
     position: relative;
@@ -173,7 +173,7 @@
 }
 
 .cta-content .btn:hover {
-    background: #ffb88c;
+    background: #ff69b4;
 }
 
 /* Testimonial Section */
@@ -271,7 +271,7 @@ footer {
 }
 
 .social-icons a:hover {
-    color: #ffb88c;
+    color: #ff69b4;
 }
 
 .newsletter {
@@ -293,7 +293,7 @@ footer {
 
 .newsletter button {
     padding: 10px 20px;
-    background-color: #ffb88c;
+    background-color: #ff69b4;
     border: none;
     border-radius: 20px;
     color: #fff;
