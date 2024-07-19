@@ -16,8 +16,6 @@
     --nav-link-color: #fff; /* White for navigation links */
     --button-text-color: #fff; /* White for button text */
     --cta-heading-color: #fff; /* White for CTA headings */
-    --testimonial-text-color: #484848; /* Dark Gray for testimonial text */
-    --testimonial-heading-color: #ff69b4; /* Pink for testimonial headings */
 }
 
 /* Navbar Styles */
@@ -26,23 +24,23 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: var(--primary-color); /* Set a solid color */
+    background-color: var(--primary-color);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for visibility */
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar.scrolled {
-    background-color: var(--primary-color); /* Ensure consistent background on scroll */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on scroll */
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
-    width: 100px; /* Adjust size as needed */
+    width: 120px;
 }
 
 .nav-links ul {
@@ -56,14 +54,14 @@
 
 .nav-links ul li a {
     text-decoration: none;
-    color: var(--nav-link-color); /* White */
-    font-family: 'Montserrat', sans-serif; /* Font untuk link navbar */
+    color: var(--nav-link-color);
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .nav-links ul li a:hover {
-    color: var(--secondary-color); /* Hover color change */
+    color: var(--secondary-color);
 }
 
 .nav-actions {
@@ -73,12 +71,12 @@
 
 .logout-btn {
     text-decoration: none;
-    color: var(--nav-link-color); /* White */
+    color: var(--nav-link-color);
     margin-right: 20px;
     font-weight: 400;
     display: flex;
     align-items: center;
-    font-family: 'Montserrat', sans-serif; /* Font untuk tombol logout */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .logout-btn i {
@@ -88,85 +86,33 @@
 .hamburger {
     display: none;
     font-size: 24px;
-    color: var(--nav-link-color); /* White */
+    color: var(--nav-link-color);
     background: none;
     border: none;
     cursor: pointer;
 }
 
-/* Hero Section */
-.hero {
-    width: 100%;
-    min-height: 100vh;
-    padding: 10px 10%;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Main Content */
+main {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+.product-section {
+    padding: 40px 5%;
     text-align: center;
-    color: #fff;
-    background: none; /* Hilangkan gambar background langsung */
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('mochi1.jpeg') center/cover no-repeat; /* Gambar background dengan efek blur */
-    filter: blur(10px); /* Efek blur */
-    z-index: -1;
+.product-section h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 30px;
 }
 
-.content {
-    max-width: 600px;
-    animation: fadeIn 1s forwards;
-}
-
-.content h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    font-family: 'Lobster', cursive; /* Font untuk judul */
-    color: var(--heading-color); /* Pink */
-    animation: fadeIn 1s forwards;
-}
-
-.content p {
-    margin: 20px 0 30px;
-    font-size: 1.2rem;
-    color: var(--header-text-color); /* White */
-    animation: fadeIn 1.5s forwards;
-}
-
-.content .btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 14px 40px;
-    color: var(--button-text-color); /* White */
-    background: linear-gradient(40deg, #ffacc8, #ff69b4);
-    border-radius: 30px;
-    border-top-right-radius: 0;
-    font-family: 'Montserrat', sans-serif; /* Font untuk tombol */
-    transition: 0.5s;
-    animation: fadeIn 2s forwards;
-}
-
-.content .btn:hover {
-    border-top-right-radius: 30px;
-    background: linear-gradient(40deg, #ff69b4, #ffacc8);
-}
-
-/* Product Section */
 .product-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
-    padding: 40px 5%;
-    background-color: #f9f9f9;
+    justify-items: center;
 }
 
 .product-card {
@@ -176,6 +122,8 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    max-width: 300px;
+    text-align: center;
 }
 
 .product-card img {
@@ -185,20 +133,22 @@
     transition: transform 0.3s ease;
 }
 
+.product-info {
+    padding: 20px;
+}
+
 .product-card h2 {
     font-size: 1.4rem;
-    margin: 15px;
     color: var(--text-color);
-    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
 }
 
 .product-card .btn {
-    display: block;
+    display: inline-block;
     text-align: center;
-    padding: 12px;
-    margin: 15px;
+    padding: 12px 20px;
     background: var(--primary-color);
-    color: var(--button-text-color); /* White */
+    color: var(--button-text-color);
     text-decoration: none;
     border-radius: 5px;
     font-family: 'Montserrat', sans-serif;
@@ -211,7 +161,7 @@
 }
 
 .product-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .product-card .btn:hover {
@@ -222,51 +172,12 @@
 /* Footer */
 footer {
     background-color: var(--primary-color);
-    color: var(--header-text-color); /* White */
+    color: var(--header-text-color);
     text-align: center;
     padding: 20px 0;
-}
-
-.footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer-content p {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-.newsletter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.newsletter p {
-    margin-bottom: 10px;
-}
-
-.newsletter input {
-    padding: 10px;
-    border: none;
-    border-radius: 20px;
-    margin-bottom: 10px;
-}
-
-.newsletter button {
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    border: none;
-    border-radius: 20px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.newsletter button:hover {
-    background-color: #ffb88c;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Responsive Design */
@@ -303,28 +214,26 @@ footer {
     .hamburger {
         display: block;
     }
-
-    .nav-actions {
-        margin-left: auto;
-    }
-
-    .content h1 {
-        font-size: 3rem;
-    }
-
-    .testimonial p {
-        font-size: 1rem;
-    }
+/* Responsive Design Continued */
+.product-section h1 {
+    font-size: 2rem;
 }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.product-container {
+    padding: 20px 0;
 }
+
+.product-card {
+    max-width: 100%;
+}
+
+.product-card img {
+    height: auto;
+}
+
+/* Footer */
+footer {
+    position: static; /* Ensure footer is at the bottom */
+}
+
+       
