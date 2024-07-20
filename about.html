@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tentang Mochi - Penjualan Mochi</title>
-    <link rel="stylesheet" href="CSS/style_about.css" />
+    <title>Resep Mochi - Penjualan Mochi</title>
+    <link rel="stylesheet" href="CSS/style_resep.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet"
@@ -12,38 +12,32 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Temukan berbagai jenis mochi yang lezat dan sehat di toko kami."
+      content="Pelajari cara membuat mochi dengan resep sederhana dan praktis di halaman ini."
     />
     <meta
       name="keywords"
-      content="Mochi, Kue Jepang, Penjualan Mochi, Camilan Sehat"
+      content="Resep Mochi, Kue Jepang, Cara Membuat Mochi, Resep Kue"
     />
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Tentang Mochi - Penjualan Mochi" />
+    <meta property="og:title" content="Resep Mochi - Penjualan Mochi" />
     <meta
       property="og:description"
-      content="Temukan berbagai jenis mochi yang lezat dan sehat di toko kami."
+      content="Pelajari cara membuat mochi dengan resep sederhana dan praktis di halaman ini."
     />
     <meta property="og:image" content="img/logo.png" />
-    <meta property="og:url" content="https://www.penjualanmochi.com" />
+    <meta property="og:url" content="https://www.penjualanmochi.com/resep" />
     <style>
-      .testimonial-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-      }
-
-      .testimonial {
-        max-width: 800px;
-        margin: 20px;
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f8f8f8;
+        color: #333;
       }
 
       .navbar {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         background: rgba(255, 105, 180, 0.8);
         padding: 10px 20px;
@@ -69,7 +63,6 @@
       .navbar a {
         text-decoration: none;
         color: #fff;
-        font-family: "Roboto", sans-serif;
         font-weight: 500;
         padding: 10px;
         transition: background 0.3s ease;
@@ -80,92 +73,36 @@
         border-radius: 5px;
       }
 
-      .hamburger {
-        display: none;
+      .content {
+        padding: 80px 20px 20px;
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      .logo {
-        max-height: 100px;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .navbar ul {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-          background: rgba(255, 105, 180, 0.9);
-          position: absolute;
-          top: 60px;
-          left: 0;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar ul.show {
-          display: flex;
-        }
-
-        .navbar li {
-          margin: 0;
-        }
-
-        .navbar a {
-          padding: 15px;
-          text-align: center;
-          border-bottom: 1px solid #fff;
-        }
-
-        .navbar a:last-child {
-          border-bottom: none;
-        }
-
-        .hamburger {
-          display: block;
-          font-size: 20px;
-          cursor: pointer;
-          color: #fff;
-        }
-      }
-
-      .hero {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 105, 180, 0.6),
-            rgba(255, 20, 147, 0.6)
-          ),
-          url("img/mochi1.jpeg") no-repeat center center fixed;
-        background-size: cover;
-        color: #fff;
-        padding: 120px 20px;
-        text-align: center;
-        background-attachment: fixed;
-      }
-
-      .hero-content h1 {
-        font-family: "Poppins", sans-serif;
-        font-size: 48px;
+      .content h1 {
+        font-size: 36px;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        text-align: center;
       }
 
-      .hero-content p {
+      .content h2 {
+        font-size: 28px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+
+      .content p,
+      .content ul,
+      .content ol {
         font-size: 18px;
-        margin-bottom: 30px;
+        line-height: 1.6;
       }
 
-      .btn-primary {
-        background-color: #ff69b4;
-        color: #fff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-family: "Roboto", sans-serif;
-        font-size: 16px;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-
-      .btn-primary:hover {
-        background-color: #ff1493;
-        transform: scale(1.05);
+      .content ul,
+      .content ol {
+        margin-left: 20px;
       }
 
       .footer {
@@ -177,68 +114,28 @@
 
       .footer p {
         margin: 0;
-        font-family: "Roboto", sans-serif;
         font-size: 16px;
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
-    <header class="hero">
-      <div class="navbar">
-        <img src="img/logo.png" alt="Logo Penjualan Mochi" class="logo" />
-        <button class="hamburger" aria-label="Toggle Menu">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-links">
-          <ul>
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="#resep">Resep</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="hero-content">
-        <h1>Penjualan Mochi</h1>
-        <p>Temukan berbagai jenis mochi yang lezat dan sehat di toko kami.</p>
-      </div>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="produk.php">Product</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resep.html">Resep</a></li>
+      </ul>
+    </nav>
 
-    <!-- About Section -->
-    <section id="tentang" class="testimonial-section">
-      <h2>Tentang Mochi</h2>
-      <div class="testimonial">
-        <p>
-          Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
-          ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
-          lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
-          sering diisi dengan berbagai macam bahan, seperti pasta kacang merah,
-          es krim, atau buah-buahan, sehingga menciptakan variasi rasa yang
-          beragam. Kue ini sering dinikmati dalam berbagai perayaan, seperti
-          Tahun Baru Jepang (Oshogatsu) dan festival-festival lainnya. Selain di
-          Jepang, mochi juga semakin populer di berbagai negara sebagai camilan
-          yang lezat dan menarik.
-        </p>
-        <p>
-          Mochi tidak hanya lezat, tetapi juga memiliki beberapa manfaat. Bahan
-          utama mochi, beras ketan, kaya akan karbohidrat yang memberikan energi
-          cepat bagi tubuh. Karena proses pembuatannya yang melibatkan
-          penggilingan dan penumbukan, mochi lebih mudah dicerna dibandingkan
-          nasi biasa. Selain itu, mochi juga bebas gluten, sehingga cocok untuk
-          mereka yang memiliki intoleransi gluten. Beberapa varian mochi yang
-          menggunakan isian alami, seperti kacang merah atau buah-buahan, juga
-          menawarkan manfaat tambahan berupa serat, vitamin, dan mineral. Meski
-          demikian, karena mochi padat kalori, konsumsi yang bijaksana tetap
-          dianjurkan.
-        </p>
-      </div>
-    </section>
-
-    <!-- Recipes Section -->
-    <section id="resep" class="testimonial-section">
-      <h2>Resep Mochi</h2>
-      <div class="testimonial">
+    <!-- Content -->
+    <div class="content">
+      <h1>Resep Mochi</h1>
+      <section id="resep">
+        <h2>Resep Mochi Sederhana</h2>
         <p>Berikut adalah resep sederhana untuk membuat mochi di rumah:</p>
-        <h4>Bahan-bahan:</h4>
+        <h3>Bahan-bahan:</h3>
         <ul>
           <li>200 gram tepung ketan</li>
           <li>100 gram gula pasir</li>
@@ -249,7 +146,7 @@
             buah-buahan)
           </li>
         </ul>
-        <h4>Cara Membuat:</h4>
+        <h3>Cara Membuat:</h3>
         <ol>
           <li>Campurkan tepung ketan dan gula dalam mangkuk besar.</li>
           <li>
@@ -268,23 +165,13 @@
             Bentuk adonan menjadi bola-bola kecil dan mochi siap disajikan.
           </li>
         </ol>
-        <h4>Selamat mencoba!</h4>
-      </div>
-    </section>
+        <p>Selamat mencoba!</p>
+      </section>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
       <p>&copy; 2024 Penjualan Mochi. All rights reserved.</p>
     </footer>
-
-    <!-- JavaScript for Hamburger Menu -->
-    <script>
-      const hamburger = document.querySelector(".hamburger");
-      const navLinks = document.querySelector(".nav-links ul");
-
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-      });
-    </script>
   </body>
 </html>
