@@ -37,7 +37,7 @@
 
       .navbar {
         display: flex;
-        justify-content: center;
+        justify-content: space-between; /* Adjust space between logo and nav links */
         align-items: center;
         background: rgba(255, 105, 180, 0.8);
         padding: 10px 20px;
@@ -48,6 +48,10 @@
         z-index: 1000;
       }
 
+      .nav-logo {
+        margin-right: auto; /* Ensure logo is on the far left */
+      }
+
       .nav-logo img {
         max-height: 80px;
         transition: transform 0.3s ease, filter 0.3s ease;
@@ -55,10 +59,12 @@
 
       .navbar ul {
         display: flex;
-        justify-content: center;
+        justify-content: center; /* Center the nav links */
         list-style-type: none;
         padding: 0;
-        margin: 0;
+        margin: 0 auto; /* Center the nav list */
+        flex-grow: 1;
+        max-width: 600px; /* Adjust as needed */
       }
 
       .navbar li {
