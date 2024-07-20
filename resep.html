@@ -48,6 +48,11 @@
         z-index: 1000;
       }
 
+      .nav-logo img {
+        max-height: 80px;
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+
       .navbar ul {
         display: flex;
         justify-content: center;
@@ -121,6 +126,9 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar">
+      <div class="nav-logo">
+        <img src="img/logo.png" alt="Logo" />
+      </div>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="produk.php">Product</a></li>
