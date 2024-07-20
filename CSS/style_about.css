@@ -8,41 +8,45 @@
 
 /* Variables for colors */
 :root {
-    --primary-color: #ff6f61;
+    --primary-color: #ff69b4;
     --secondary-color: #ffb88c;
-    --background-color: #f4f4f4;
-    --text-color: #333;
     --header-text-color: #fff;
+    --text-color: #484848;
 }
 
-/* Header Styles */
+/* Hero Section */
 .hero {
     width: 100%;
     min-height: 100vh;
-    padding: 5% 10%;
-    background: linear-gradient(to right, rgba(255, 111, 97, 0.7), rgba(255, 184, 140, 0.7)), url('images/hero_image.jpeg') center/cover no-repeat;
-    color: var(--header-text-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(to right, rgba(255, 105, 180, 0.7), rgba(255, 184, 140, 0.7)), url('mochi1.jpeg') center/cover no-repeat;
 }
 
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+/* Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    position: absolute;
-    top: 0;
     padding: 15px 20px;
+    position: relative;
     z-index: 100;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
+.logo {
+    width: 140px;
 }
 
 .nav-links ul {
@@ -61,7 +65,7 @@
     transition: color 0.3s ease;
 }
 
-.nav-links ul li a.active, .nav-links ul li a:hover {
+.nav-links ul li a:hover {
     color: var(--secondary-color);
 }
 
@@ -74,88 +78,81 @@
     cursor: pointer;
 }
 
-.content h1 {
-    font-size: 3rem;
+/* Testimonial Section */
+.testimonial-section {
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.5), rgba(255, 184, 140, 0.5));
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+.testimonial-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial {
+    max-width: 800px;
+    background: #fff;
+    padding: 30px;
+    margin: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.testimonial p {
+    font-size: 1.1em;
+    color: var(--text-color);
     margin-bottom: 20px;
 }
 
-.content p {
-    font-size: 1.25rem;
-    margin-bottom: 30px;
-}
-
-.content .btn {
-    background: linear-gradient(40deg, #ffacc8, #f46d6d);
-    color: #fff;
-    padding: 14px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-}
-
-.content .btn:hover {
-    background: linear-gradient(40deg, #f46d6d, #ffacc8);
-}
-
-/* About Section */
-.about-section {
-    padding: 50px 10%;
-    background: #fff;
-    text-align: center;
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.about-text {
-    max-width: 600px;
-    margin: 0 auto;
-    font-size: 1.125rem;
-    color: var(--text-color);
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 10px;
-}
-
-/* Benefits Section */
-.benefits-section {
-    background: var(--background-color);
-    padding: 50px 10%;
-    text-align: center;
-}
-
-.benefits-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.benefit-item {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.benefit-item h3 {
-    margin-bottom: 10px;
+.testimonial h4 {
+    font-size: 1.2em;
     color: var(--primary-color);
 }
 
 /* Footer Styles */
 footer {
-    background: var(--primary-color);
-    color: #fff;
     text-align: center;
     padding: 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;
+}
+
+footer p {
+    margin: 5px 0;
 }
 
 /* Responsive Design */
@@ -164,7 +161,7 @@ footer {
         position: absolute;
         top: 60px;
         right: 0;
-        background: var(--primary-color);
+        background-color: var(--primary-color);
         width: 100%;
         display: none;
         flex-direction: column;
@@ -189,33 +186,40 @@ footer {
         display: block;
     }
 
+    .content {
+        margin-top: 20%;
+        max-width: 100%;
+    }
+
     .content h1 {
-        font-size: 2rem;
+        font-size: 50px;
     }
 
     .content p {
-        font-size: 1rem;
+        font-size: 14px;
     }
 
     .content .btn {
-        padding: 10px 20px;
+        padding: 10px 40px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     .hero {
-        padding: 5% 5%;
+        padding: 10px 5%;
     }
 
     .content h1 {
-        font-size: 1.5rem;
+        font-size: 40px;
     }
 
     .content p {
-        font-size: 0.875rem;
+        font-size: 12px;
     }
 
     .content .btn {
-        padding: 8px 15px;
+        padding: 10px 30px;
+        font-size: 12px;
     }
 }
