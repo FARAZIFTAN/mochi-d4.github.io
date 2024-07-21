@@ -1,90 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tentang Kami - Website Mochi</title>
-    <link rel="stylesheet" href="CSS/style_about.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="CSS/style_about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="img/logo.png" class="logo" alt="Logo">
-            </a>
-            <div class="nav-links" id="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="produk.php">Produk</a></li>
-                    <li><a href="about.html">Tentang Kami</a></li>
-                </ul>
-            </div>
-            <div class="nav-actions">
-                <a href="proses_logout.php" class="logout-btn">
-                    <i class="fas fa-sign-out-alt"></i>
-                </a>
-                <button class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <img src="img/logo.png" class="logo" alt="Logo" />
+        </a>
+        <div class="nav-links" id="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.php">Produk</a></li>
+            <li><a href="about.html">Tentang Kami</a></li>
+          </ul>
         </div>
+        <div class="nav-actions">
+          <a href="proses_logout.php" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <div class="content">
-        <h1>Tentang Kami</h1>
-        <p>Selamat datang di Website Mochi, tempat terbaik untuk mendapatkan mochi berkualitas tinggi. Kami berdedikasi untuk menyediakan mochi yang lezat dan beragam kepada pelanggan kami.</p>
-        <img src="img/about.jpg" alt="Tentang Kami">
-        <h2>Visi Kami</h2>
-        <p>Menjadi pemimpin dalam industri mochi dengan mengutamakan kualitas dan inovasi.</p>
-        <h2>Misi Kami</h2>
-        <p>Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.</p>
+      <h1>Tentang Kami</h1>
+      <p>
+        Selamat datang di Website Mochi, tempat terbaik untuk mendapatkan mochi
+        berkualitas tinggi. Kami berdedikasi untuk menyediakan mochi yang lezat
+        dan beragam kepada pelanggan kami.
+      </p>
+      <img src="img/about.jpg" alt="Tentang Kami" />
+      <h2>Visi Kami</h2>
+      <p>
+        Menjadi pemimpin dalam industri mochi dengan mengutamakan kualitas dan
+        inovasi.
+      </p>
+      <h2>Misi Kami</h2>
+      <p>Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.</p>
     </div>
 
     <footer>
-        <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
+      <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-    // JavaScript for Navbar Toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+      document.addEventListener("DOMContentLoaded", () => {
+        // JavaScript for Navbar Toggle
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
 
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-    });
+        hamburger.addEventListener("click", () => {
+          navLinks.classList.toggle("show");
+        });
 
-    // JavaScript for Scroll Effect
-    window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+        // JavaScript for Scroll Effect
+        window.addEventListener("scroll", () => {
+          const navbar = document.querySelector(".navbar");
+          if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
 
-    // JavaScript for Reveal Animation
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        revealElements.forEach(element => {
+        // JavaScript for Reveal Animation
+        const revealElements = document.querySelectorAll(".reveal");
+        const revealOnScroll = () => {
+          const windowHeight = window.innerHeight;
+          revealElements.forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
             if (elementTop < windowHeight - 50) {
-                element.classList.add('active');
+              element.classList.add("active");
             } else {
-                element.classList.remove('active');
+              element.classList.remove("active");
             }
-        });
-    };
+          });
+        };
 
-    window.addEventListener('scroll', revealOnScroll);
-    revealOnScroll(); // Initial call to reveal elements on page load
-});
-
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll(); // Initial call to reveal elements on page load
+      });
     </script>
-</body>
+  </body>
 </html>
