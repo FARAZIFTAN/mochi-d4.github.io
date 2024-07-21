@@ -165,6 +165,7 @@ a:hover {
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, rgba(255, 105, 180, 0.6), rgba(255, 20, 147, 0.6)), url('mochi1.jpeg') no-repeat center center fixed;
+    backdrop-filter: blur(10px);
     background-size: cover;
     color: #fff;
     padding: 120px 20px;
