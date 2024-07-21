@@ -1,180 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tentang Mochi - Penjualan Mochi</title>
-    <link rel="stylesheet" href="CSS/style_about.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- SEO Meta Tags -->
-    <meta
-      name="description"
-      content="Pelajari lebih lanjut tentang mochi, kue tradisional Jepang yang lezat dan kenyal."
-    />
-    <meta
-      name="keywords"
-      content="Mochi, Kue Jepang, Tentang Mochi, Tradisi Jepang"
-    />
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Tentang Mochi - Penjualan Mochi" />
-    <meta
-      property="og:description"
-      content="Pelajari lebih lanjut tentang mochi, kue tradisional Jepang yang lezat dan kenyal."
-    />
-    <meta property="og:image" content="img/logo.png" />
-    <meta property="og:url" content="https://www.penjualanmochi.com/about" />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #f8f8f8;
-        color: #333;
-      }
-
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: rgba(255, 105, 180, 0.8);
-        padding: 10px 20px;
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
-
-      .nav-logo img {
-        max-height: 80px;
-        transition: transform 0.3s ease, filter 0.3s ease;
-      }
-
-      .navbar ul {
-        display: flex;
-        justify-content: center;
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-
-      .navbar li {
-        margin: 0 10px;
-      }
-
-      .navbar a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 500;
-        padding: 10px;
-        transition: background 0.3s ease;
-      }
-
-      .navbar a:hover {
-        background: rgba(255, 20, 147, 0.7);
-        border-radius: 5px;
-      }
-
-      .content {
-        padding: 120px 20px 20px;
-        max-width: 800px;
-        margin: auto;
-        background: #fff;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .content h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-
-      .content h2 {
-        font-size: 28px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-      }
-
-      .content p {
-        font-size: 18px;
-        line-height: 1.6;
-      }
-
-      .footer {
-        background: #ff1493;
-        color: #fff;
-        padding: 20px 0;
-        text-align: center;
-      }
-
-      .footer p {
-        margin: 0;
-        font-size: 16px;
-      }
-    </style>
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Website Mochi</title>
+    <link rel="stylesheet" href="CSS/style_about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
     <!-- Navbar -->
     <nav class="navbar">
-      <div class="nav-logo">
-        <img src="img/logo.png" alt="Logo" />
-      </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="produk.php">Product</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resep.html">Recipe</a></li>
-      </ul>
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="img/logo.png" class="logo" alt="Logo">
+            </a>
+            <div class="nav-links" id="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
+                </ul>
+            </div>
+            <div class="nav-actions">
+                <a href="proses_logout.php" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <?php
+                    session_start();
+                    if (!isset($_SESSION['username'])) {
+                        header("Location: login.php");
+                        exit();
+                    }
+                    ?>
+                </a>
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <!-- Content -->
+    <!-- Main Content -->
     <div class="content">
-      <h1>Tentang Mochi</h1>
-      <section id="tentang">
-        <h2>Apa itu Mochi?</h2>
-        <p>
-          Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
-          ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
-          lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
-          sering diisi dengan berbagai macam bahan, seperti pasta kacang merah,
-          es krim, atau buah-buahan, sehingga menciptakan variasi rasa yang
-          beragam.
-        </p>
-        <img src="img/" alt="Tentang Mochi" />
-
-        <h2>Sejarah Mochi</h2>
-        <p>
-          Mochi telah menjadi bagian penting dari budaya Jepang selama
-          berabad-abad. Kue ini sering dinikmati dalam berbagai perayaan,
-          seperti Tahun Baru Jepang (Oshogatsu) dan festival-festival lainnya.
-          Selain di Jepang, mochi juga semakin populer di berbagai negara
-          sebagai camilan yang lezat dan menarik.
-        </p>
-        <img src="img/" alt="Sejarah Mochi" />
-
-        <h2>Manfaat Mochi</h2>
-        <p>
-          Mochi tidak hanya lezat, tetapi juga memiliki beberapa manfaat. Bahan
-          utama mochi, beras ketan, kaya akan karbohidrat yang memberikan energi
-          cepat bagi tubuh. Karena proses pembuatannya yang melibatkan
-          penggilingan dan penumbukan, mochi lebih mudah dicerna dibandingkan
-          nasi biasa. Selain itu, mochi juga bebas gluten, sehingga cocok untuk
-          mereka yang memiliki intoleransi gluten. Beberapa varian mochi yang
-          menggunakan isian alami, seperti kacang merah atau buah-buahan, juga
-          menawarkan manfaat tambahan berupa serat, vitamin, dan mineral. Meski
-          demikian, karena mochi padat kalori, konsumsi yang bijaksana tetap
-          dianjurkan.
-        </p>
-        <img src="img/" alt="Manfaat Mochi" />
-      </section>
+        <h1>Tentang Kami</h1>
+        <p>Selamat datang di Website Mochi, tempat terbaik untuk mendapatkan mochi berkualitas tinggi. Kami berdedikasi untuk menyediakan mochi yang lezat dan beragam kepada pelanggan kami.</p>
+        <img src="img/about.jpg" alt="Tentang Kami">
+        <h2>Visi Kami</h2>
+        <p>Menjadi pemimpin dalam industri mochi dengan mengutamakan kualitas dan inovasi.</p>
+        <h2>Misi Kami</h2>
+        <p>Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p>&copy; 2024 Penjualan Mochi. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
     </footer>
-  </body>
+
+    <script>
+        // JavaScript for Navbar Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // JavaScript for Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
 </html>
