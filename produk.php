@@ -26,20 +26,20 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             <div class="nav-links" id="nav-links">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="produk.php">Product</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="produk.php">Produk</a></li>
+                    <li><a href="about.html">Tentang Kami</a></li>
                 </ul>
             </div>
             <div class="nav-actions">
                 <a href="proses_logout.php" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
                     <?php
-                    session_start(); // Memulai sesi PHP
-                    if (!isset($_SESSION['username'])) { // Memeriksa apakah variabel sesi 'username' tidak diset
-                        header("Location: login.php"); // Redirect ke halaman login jika tidak
-                        exit(); // Keluar dari skrip PHP setelah redirect
-                    }
-                    ?>
+                session_start(); // Memulai sesi PHP
+                if (!isset($_SESSION['username'])) { // Memeriksa apakah variabel sesi 'username' tidak diset
+                    header("Location: login.php"); // Redirect ke halaman login jika tidak
+                    exit(); // Keluar dari skrip PHP setelah redirect
+                }
+                ?>
                 </a>
                 <button class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
@@ -48,7 +48,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         </div>
     </nav>
 
-
+  
 
     <!-- Main Content -->
     <main>
