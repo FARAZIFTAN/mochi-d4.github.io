@@ -19,32 +19,52 @@ $result = $conn->query($sql);
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/4da832a0d0.js" crossorigin="anonymous"></script>
 
     <style>
-        /* Mengubah warna utama menjadi #f48fb1 */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
         .bg-gradient-primary {
             background-color: #f48fb1 !important;
             background-image: linear-gradient(180deg, #f48fb1 10%, #f48fb1 100%) !important;
             background-size: cover !important;
         }
 
-        .border-left-primary {
-            border-left: .25rem solid #f48fb1 !important;
+        .sidebar {
+            background-color: #2d2e4f !important;
         }
 
-        .text-primary {
+        .sidebar .nav-item .nav-link {
+            color: #ddd !important;
+            font-weight: 500;
+        }
+
+        .sidebar .nav-item .nav-link.active {
+            background-color: #3c3f63 !important;
+            color: #fff !important;
+        }
+
+        .sidebar-brand-icon {
             color: #f48fb1 !important;
+        }
+
+        .topbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary {
             color: #fff;
             background-color: #f48fb1;
             border-color: #f48fb1;
+            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
@@ -53,79 +73,102 @@ $result = $conn->query($sql);
             border-color: #e57399;
         }
 
-        .btn-primary:focus,
-        .btn-primary.focus {
-            color: #fff;
-            background-color: #e57399;
-            border-color: #e57399;
-            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
+        /* Product Table */
+        .table {
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .btn-primary:active,
-        .btn-primary.active,
-        .show>.btn-primary.dropdown-toggle {
-            color: #fff;
-            background-color: #e57399;
-            border-color: #e57399;
+        .table th,
+        .table td {
+            vertical-align: middle !important;
+            text-align: center;
         }
 
-        .btn-primary:active:focus,
-        .btn-primary.active:focus,
-        .show>.btn-primary.dropdown-toggle:focus {
-            box-shadow: 0 0 0 0.2rem rgba(244, 143, 177, 0.5);
+        .table th {
+            background-color: #f8f9fc;
         }
 
-        /* CSS untuk produk sidebar */
-        .sidebar-product-list {
-            padding: 10px;
+        .table img {
+            border-radius: 4px;
+            transition: transform 0.3s ease;
         }
 
-        .sidebar-product-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
+        .table img:hover {
+            transform: scale(1.1);
         }
 
-        .sidebar-product-item .product-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: #f48fb1;
+        /* Card for New Product Form */
+        .card {
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
         }
 
-        .sidebar-product-item .product-actions {
-            display: flex;
-            gap: 5px;
+        .card-header {
+            background-color: #f8f9fc;
+            border-bottom: none;
+            border-radius: 8px 8px 0 0;
+            font-weight: bold;
         }
 
-        .sidebar-product-item .btn-update,
-        .sidebar-product-item .btn-delete {
+        .card-body {
+            padding: 20px;
+        }
+
+        .form-control {
+            border-radius: 4px;
+            border-color: #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #f48fb1;
+            box-shadow: none;
+        }
+
+        .btn-update,
+        .btn-delete {
             padding: 5px 10px;
-            font-size: 12px;
+            font-size: 14px;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .sidebar-product-item .btn-update {
+        .btn-update {
             background-color: #1cc88a;
         }
 
-        .sidebar-product-item .btn-delete {
+        .btn-delete {
             background-color: #e74a3b;
         }
 
-        .sidebar-product-item .btn-update:hover {
+        .btn-update:hover {
             background-color: #17a673;
         }
 
-        .sidebar-product-item .btn-delete:hover {
+        .btn-delete:hover {
             background-color: #d62d20;
         }
-    </style>
 
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .table img {
+                width: 40px;
+            }
+
+            .sidebar-brand-text {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -139,7 +182,7 @@ $result = $conn->query($sql);
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-mochi"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Admin | Dev <sup>1</sup></div>
             </a>
@@ -213,12 +256,14 @@ $result = $conn->query($sql);
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -232,131 +277,132 @@ $result = $conn->query($sql);
                 </nav>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+                                <!-- Begin Page Content -->
+                                <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Halaman Produk Admin</h1>
+<!-- Page Heading -->
+<h1 class="h3 mb-4 text-gray-800">Halaman Produk Admin</h1>
 
-                    <!-- Main Content Here -->
-                    <main>
-                        <div class="product-container">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nama Produk</th>
-                                        <th>Harga Per Box</th>
-                                        <th>Deskripsi</th>
-                                        <th>Gambar</th>
-                                        <th>Aksi</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php while ($row = $result->fetch_assoc()) : ?>
-                                        <tr>
-                                            <td><?php echo $row['id']; ?></td>
-                                            <td><?php echo $row['nama_produk']; ?></td>
-                                            <td><?php echo $row['harga_1_box_isi_10pcs']; ?></td>
-                                            <td><?php echo $row['deskripsi']; ?></td>
-                                            <td><img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>" width="50"></td>
-                                            <td>
-                                                <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="btn btn-update">Edit</a>
-                                                <a href="delete_product.php?id=<?php echo $row['id']; ?>" class="btn btn-delete">Delete</a>
-                                            </td>
-                                        </tr>
-                                    <?php endwhile; ?>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Form untuk menambahkan produk baru -->
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Tambah Produk Baru</h6>
-                            </div>
-                            <div class="card-body">
-                                <form action="add_product.php" method="POST">
-                                    <div class="form-group">
-                                        <label for="nama_produk">Nama Produk</label>
-                                        <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="harga_1_box_isi_10pcs">Harga Per Box</label>
-                                        <input type="text" class="form-control" id="harga_1_box_isi_10pcs" name="harga_1_box_isi_10pcs" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="deskripsi">Deskripsi</label>
-                                        <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="gambar">Link Gambar</label>
-                                        <input type="text" class="form-control" id="gambar" name="gambar" required>
-                                    </div>
-                                    <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </main>
-
-                </div>
-                <!-- /.container-fluid -->
-
-
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Penjualan Mochi | WebDev</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
+<!-- Main Content Here -->
+<main>
+    <!-- Tabel Produk -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama Produk</th>
+                    <th>Harga Per Box</th>
+                    <th>Deskripsi</th>
+                    <th>Gambar</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php while ($row = $result->fetch_assoc()) : ?>
+                    <tr>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['nama_produk']; ?></td>
+                        <td><?php echo $row['harga_1_box_isi_10pcs']; ?></td>
+                        <td><?php echo $row['deskripsi']; ?></td>
+                        <td>
+                            <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>" width="80" class="img-fluid rounded">
+                        </td>
+                        <td>
+                            <a href="edit_product.php?id=<?php echo $row['id']; ?>" class="btn btn-update">Edit</a>
+                            <a href="delete_product.php?id=<?php echo $row['id']; ?>" class="btn btn-delete">Delete</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
     </div>
-    <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+    <!-- Form untuk Menambahkan Produk Baru -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Tambah Produk Baru</h6>
+        </div>
+        <div class="card-body">
+            <form action="add_product.php" method="POST">
+                <div class="form-group">
+                    <label for="nama_produk">Nama Produk</label>
+                    <input type="text" class="form-control" id="nama_produk" name="nama_produk" required>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="index.html">Logout</a>
+                <div class="form-group">
+                    <label for="harga_1_box_isi_10pcs">Harga Per Box</label>
+                    <input type="text" class="form-control" id="harga_1_box_isi_10pcs" name="harga_1_box_isi_10pcs" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="deskripsi">Deskripsi</label>
+                    <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="gambar">Link Gambar</label>
+                    <input type="text" class="form-control" id="gambar" name="gambar" required>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+            </form>
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</main>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+</div>
+<!-- /.container-fluid -->
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+<div class="container my-auto">
+<div class="copyright text-center my-auto">
+    <span>Copyright &copy; Penjualan Mochi | WebDev</span>
+</div>
+</div>
+</footer>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+<i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+<button class="close" type="button" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">×</span>
+</button>
+</div>
+<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+<a class="btn btn-primary" href="index.html">Logout</a>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
 
 </body>
 
