@@ -58,22 +58,12 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                     <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
                     <div class="product-info">
                         <h2><?php echo $row['nama_produk']; ?></h2>
-                        <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Detail Produk</a>
+                        <a href="detail produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Detail Produk</a>
                         <a href="tambah_keranjang.php?id=<?php echo $row['id']; ?>" class="btn"><i class="fas fa-cart-plus"></i></a>
                     </div>
                 </div>
             <?php endwhile; ?>
         </div>
-
-        <!-- Pagination -->
-        <div class="pagination">
-            <a href="#" class="prev">Previous</a>
-            <a href="#" class="page">1</a>
-            <a href="#" class="page">2</a>
-            <a href="#" class="page">3</a>
-            <a href="#" class="next">Next</a>
-        </div>
-
         <!-- Loading Spinner -->
         <div id="loading-spinner" class="loading-spinner">
             <div class="spinner"></div>
