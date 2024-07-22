@@ -8,15 +8,15 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produk - Website Mochi</title>
     <link rel="stylesheet" href="CSS/style_produk.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -26,7 +26,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
             </a>
             <div class="nav-links" id="nav-links">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="produk.php">Product</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
@@ -35,20 +35,12 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                 <a href="keranjang.php" class="cart-btn">
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">
-                        <?php
-                        // Assuming you have a session variable that stores the cart count
-                        echo isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
-                        ?>
+                        <?php echo isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0; ?>
                     </span>
                 </a>
                 <a href="proses_logout.php" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
-                    <?php
-                    if (!isset($_SESSION['username'])) { // Memeriksa apakah variabel sesi 'username' tidak diset
-                        header("Location: login.php"); // Redirect ke halaman login jika tidak
-                        exit(); // Keluar dari skrip PHP setelah redirect
-                    }
-                    ?>
+                    <?php if (!isset($_SESSION['username'])) { header("Location: login.php"); exit(); } ?>
                 </a>
                 <button class="hamburger" id="hamburger">
                     <i class="fas fa-bars"></i>
@@ -129,5 +121,5 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         });
     </script>
 </body>
-
 </html>
+
