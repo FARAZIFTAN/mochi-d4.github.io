@@ -1,5 +1,6 @@
 <?php
 include 'config.php'; // Mengimpor file konfigurasi database
+session_start(); // Memulai sesi PHP
 
 $sql = "SELECT * FROM produk"; // Query SQL untuk mengambil semua data produk dari tabel 'produk'
 $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam variabel $result
@@ -31,10 +32,18 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                 </ul>
             </div>
             <div class="nav-actions">
+                <a href="keranjang.php" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">
+                        <?php
+                        // Assuming you have a session variable that stores the cart count
+                        echo isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
+                        ?>
+                    </span>
+                </a>
                 <a href="proses_logout.php" class="logout-btn">
                     <i class="fas fa-sign-out-alt"></i>
                     <?php
-                    session_start(); // Memulai sesi PHP
                     if (!isset($_SESSION['username'])) { // Memeriksa apakah variabel sesi 'username' tidak diset
                         header("Location: login.php"); // Redirect ke halaman login jika tidak
                         exit(); // Keluar dari skrip PHP setelah redirect
@@ -48,8 +57,6 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
         </div>
     </nav>
 
-
-
     <!-- Main Content -->
     <main>
         <!-- Product Grid -->
@@ -59,7 +66,8 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                     <img src="<?php echo $row['gambar']; ?>" alt="<?php echo $row['nama_produk']; ?>">
                     <div class="product-info">
                         <h2><?php echo $row['nama_produk']; ?></h2>
-                        <a href="detail produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Detail Produk</a>
+                        <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Detail Produk</a>
+                        <a href="tambah_keranjang.php?id=<?php echo $row['id']; ?>" class="btn">Tambah ke Keranjang</a>
                     </div>
                 </div>
             <?php endwhile; ?>
