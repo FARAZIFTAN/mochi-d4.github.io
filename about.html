@@ -1,109 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tentang Kami - Website Mochi</title>
-    <link rel="stylesheet" href="CSS/style_about.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <img src="img/logo.png" alt="Logo" />
-        </div>
-        <div class="nav-links" id="nav-links">
-          <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="produk.php">Product</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="nav-actions">
-          <a href="proses_logout.php" class="logout-btn">
-            <i class="fas fa-sign-out-alt"></i>
-          </a>
-          <button class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tentang Kami - Website Mochi</title>
+  <link rel="stylesheet" href="CSS/style_about.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="img/logo.png" alt="Logo" />
       </div>
-    </nav>
+      <div class="nav-links" id="nav-links">
+        <ul>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="produk.php">Product</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav-actions">
+        <a href="proses_logout.php" class="logout-btn">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+        <button class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Main Content -->
-    <div class="content">
-      <h1 class="reveal">Tentang Kami</h1>
-      <div class="content-section reveal">
-        <p>
-          Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
-          ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
-          lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
-          sering diisi dengan berbagai macam bahan, seperti pasta kacang merah,
-          es krim, atau buah-buahan, sehingga menciptakan variasi rasa yang
-          beragam.
-        </p>
-        <img src="img/daifuku.jpeg" alt="Tentang Kami" />
-      </div>
-      <h2 class="reveal">Visi Kami</h2>
-      <p class="reveal">
+  <!-- Main Content -->
+  <div class="content">
+    <section class="intro reveal">
+      <h1>Tentang Kami</h1>
+      <p>
+        Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
+        ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
+        lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
+        sering diisi dengan berbagai macam bahan, seperti pasta kacang merah,
+        es krim, atau buah-buahan, sehingga menciptakan variasi rasa yang
+        beragam.
+      </p>
+      <img src="img/daifuku.jpeg" alt="Tentang Kami" />
+    </section>
+    
+    <section class="vision-mission reveal">
+      <h2>Visi Kami</h2>
+      <p>
         Menjadi pemimpin dalam industri mochi dengan mengutamakan kualitas, rasa
         dan inovasi.
       </p>
-      <h2 class="reveal">Misi Kami</h2>
-      <p class="reveal">Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.</p>
-    </div>
-    
-    <!-- Footer -->
-    <footer>
+      <h2>Misi Kami</h2>
       <p>
-        &copy; 2024 Toko Online. Hak cipta dilindungi. <br />
-        Contact Person: 089637217339
+        Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.
       </p>
-    </footer>
+    </section>
+    
+    <section class="team reveal">
+      <h2>Tim Kami</h2>
+      <div class="team-member">
+        <img src="img/team-member1.jpg" alt="Team Member 1" />
+        <h3>Nama Anggota Tim 1</h3>
+        <p>Deskripsi singkat tentang peran dan kontribusi anggota tim ini.</p>
+      </div>
+      <!-- Tambahkan lebih banyak anggota tim di sini -->
+    </section>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // JavaScript for Navbar Toggle
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("nav-links");
+    <section class="history reveal">
+      <h2>Sejarah Kami</h2>
+      <p>Ceritakan bagaimana perusahaan Anda didirikan dan perkembangan penting yang telah terjadi.</p>
+    </section>
 
-        hamburger.addEventListener("click", () => {
-          navLinks.classList.toggle("show");
-        });
+    <section class="gallery reveal">
+      <h2>Galeri</h2>
+      <img src="img/gallery1.jpg" alt="Gallery Image 1" />
+      <!-- Tambahkan lebih banyak gambar di sini -->
+    </section>
 
-        // JavaScript for Scroll Effect
-        window.addEventListener("scroll", () => {
-          const navbar = document.querySelector(".navbar");
-          if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
+    <section class="testimonials reveal">
+      <h2>Testimoni</h2>
+      <blockquote>
+        <p>"Mochi yang luar biasa! Layanan pelanggan yang sangat baik!"</p>
+        <footer>- Nama Pelanggan</footer>
+      </blockquote>
+      <!-- Tambahkan lebih banyak testimoni di sini -->
+    </section>
+
+    <section class="contact reveal">
+      <h2>Hubungi Kami</h2>
+      <p>Email: contact@example.com</p>
+      <p>Telepon: 089637217339</p>
+    </section>
+
+    <section class="cta reveal">
+      <h2>Hubungi Kami untuk Informasi Lebih Lanjut</h2>
+      <a href="contact.html" class="cta-button">Hubungi Kami</a>
+    </section>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>
+      &copy; 2024 Toko Online. Hak cipta dilindungi. <br />
+      Contact Person: 089637217339
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // JavaScript for Navbar Toggle
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      // JavaScript for Scroll Effect
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      // JavaScript for Reveal Animation
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach((element) => {
+          const elementTop = element.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 50) {
+            element.classList.add("active");
           } else {
-            navbar.classList.remove("scrolled");
+            element.classList.remove("active");
           }
         });
+      };
 
-        // JavaScript for Reveal Animation
-        const revealElements = document.querySelectorAll(".reveal");
-        const revealOnScroll = () => {
-          const windowHeight = window.innerHeight;
-          revealElements.forEach((element) => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 50) {
-              element.classList.add("active");
-            } else {
-              element.classList.remove("active");
-            }
-          });
-        };
-
-        window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll(); // Initial call to reveal elements on page load
-      });
-    </script>
-  </body>
+      window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll(); // Initial call to reveal elements on page load
+    });
+  </script>
+</body>
 </html>
