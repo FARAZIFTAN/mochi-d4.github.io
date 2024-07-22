@@ -11,17 +11,44 @@
     />
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img src="img/logo.png" alt="Logo" />
+        </div>
+        <div class="nav-links" id="nav-links">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="produk.php">Product</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div class="nav-actions">
+          <a href="proses_logout.php" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
     <!-- Main Content -->
     <div class="content">
       <h1>Tentang Kami</h1>
-      <p>
-        Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
-        ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
-        lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
-        sering diisi dengan berbagai macam bahan, seperti pasta kacang merah, es
-        krim, atau buah-buahan, sehingga menciptakan variasi rasa yang beragam.
-      </p>
-      <img src="img/daifuku.jpeg" alt="Tentang Kami" />
+      <div class="content-section">
+        <p>
+          Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
+          ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
+          lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
+          sering diisi dengan berbagai macam bahan, seperti pasta kacang merah,
+          es krim, atau buah-buahan, sehingga menciptakan variasi rasa yang
+          beragam.
+        </p>
+        <img src="img/daifuku.jpeg" alt="Tentang Kami" class="about-img" />
+      </div>
       <h2>Visi Kami</h2>
       <p>
         Menjadi pemimpin dalam industri mochi dengan mengutamakan kualitas, rasa
@@ -31,10 +58,11 @@
       <p>Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.</p>
     </div>
 
+    <!-- Footer -->
     <footer>
       <p>
         &copy; 2024 Toko Online. Hak cipta dilindungi. <br />
-        contact person: 089637217339
+        Contact Person: 089637217339
       </p>
     </footer>
 
