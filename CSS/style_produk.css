@@ -28,9 +28,14 @@ body {
   }
   
   .nav-logo img {
-    max-height: 80px;
+    max-height: 85px;
     transition: transform 0.3s ease, filter 0.3s ease;
-  }
+}
+
+.nav-logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
   
   .nav-links ul {
     display: flex;
