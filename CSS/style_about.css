@@ -1,7 +1,29 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  background-image: url('pattern.png');
+  background-repeat: repeat;
+  background-size: 150px 150px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff69b4;
+}
+
 /* Navbar Styles */
 .navbar {
   background: rgba(255, 105, 180, 0.8);
-  backdrop-filter: blur(10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease, box-shadow 0.3s ease;
   position: fixed;
@@ -10,7 +32,7 @@
   left: 0;
   z-index: 1000;
   padding: 15px 20px;
-  color: #fff; /* Make sure text color is visible */
+  color: #fff;
 }
 
 .navbar.scrolled {
@@ -135,4 +157,76 @@
       right: 20px;
       transform: translateY(-50%);
   }
+}
+
+/* Content Section */
+.content {
+  padding: 120px 20px 20px;
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.content h1, .content h2 {
+  color: #ff1493;
+}
+
+.content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Footer Styles */
+footer {
+  background-color: #ff1493;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Add some space at the bottom for the footer */
+body::after {
+  content: "";
+  display: block;
+  height: 100px; /* Adjust height if needed */
 }
