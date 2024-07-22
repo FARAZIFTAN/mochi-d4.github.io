@@ -67,7 +67,7 @@ $result = $conn->query($sql); // Eksekusi query dan menyimpan hasilnya dalam var
                     <div class="product-info">
                         <h2><?php echo $row['nama_produk']; ?></h2>
                         <a href="detail_produk/<?php echo $row['detail_halaman']; ?>.php?id=<?php echo $row['id']; ?>" class="btn">Detail Produk</a>
-                        <a href="tambah_keranjang.php?id=<?php echo $row['id']; ?>" class="btn">Tambah ke Keranjang</a>
+                        <a href="tambah_keranjang.php?id=<?php echo $row['id']; ?>" class="btn"><i class="fas fa-cart-plus"></i></a>
                     </div>
                 </div>
             <?php endwhile; ?>
