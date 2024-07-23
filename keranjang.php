@@ -42,7 +42,7 @@ foreach ($cart as $product_id => $quantity) {
             </a>
             <div class="nav-links" id="nav-links">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="produk.php">Product</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
