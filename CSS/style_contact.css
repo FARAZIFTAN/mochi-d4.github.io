@@ -5,7 +5,7 @@ body {
 }
 
 .navbar {
-  background-color: #ff69b4; /* Changed color */
+  background-color: #ff69b4;
   color: #fff;
   padding: 10px 0;
   position: sticky;
@@ -60,15 +60,16 @@ body {
   font-size: 24px;
 }
 
-.content {
-  padding: 20px;
-}
-
 .kontak {
   padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .map__container, .inbox__container, .kontak__container {
+  width: 90%;
+  max-width: 800px;
   margin-bottom: 20px;
 }
 
@@ -90,45 +91,69 @@ body {
 .inbox__title {
   font-size: 24px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .form-container {
   background-color: #f8f8f8;
   padding: 20px;
   border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-column {
+  flex: 1;
 }
 
 .form-control {
+  width: 100%;
+  padding: 10px;
   margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  background-color: #ff69b4; /* Warna button Kirim diubah menjadi #ff69b4 */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #e60073; /* Warna button saat hover */
 }
 
 .kontak__container {
-  padding-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.card {
-  border: none;
+.kontak__item {
+  margin-bottom: 10px;
 }
 
-.card-body {
-  background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#kontak__title {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-#kontak__text {
+.kontak__item a {
   color: #ff69b4;
   text-decoration: none;
 }
 
 footer {
-  background-color: #ff69b4; /* Changed color */
+  background-color: #ff69b4;
   color: #fff;
   text-align: center;
   padding: 10px 0;
