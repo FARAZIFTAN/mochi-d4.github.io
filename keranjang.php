@@ -64,7 +64,7 @@ $conn->close(); // Tutup koneksi setelah selesai
                     <i class="fas fa-shopping-cart"></i>
                     <span class="cart-count">
                         <?php
-                        echo isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0;
+                        echo isset($_SESSION['cart_count']) ? htmlspecialchars($_SESSION['cart_count']) : 0;
                         ?>
                     </span>
                 </a>
@@ -92,10 +92,10 @@ $conn->close(); // Tutup koneksi setelah selesai
                     <img src="<?php echo htmlspecialchars($item['gambar']); ?>" alt="<?php echo htmlspecialchars($item['nama_produk']); ?>">
                     <div class="cart-info">
                         <h2><?php echo htmlspecialchars($item['nama_produk']); ?></h2>
-                        <p>Jumlah: <?php echo $item['quantity']; ?></p>
+                        <p>Jumlah: <?php echo htmlspecialchars($item['quantity']); ?></p>
                         <p>Harga: Rp <?php echo number_format($item['harga'], 0, ',', '.'); ?></p>
                         <form action="hapus_keranjang.php" method="post">
-                            <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
+                            <input type="hidden" name="id" value="<?php echo htmlspecialchars($item['id']); ?>">
                             <button type="submit" class="btn">Hapus</button>
                         </form>
                     </div>

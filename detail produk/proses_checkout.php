@@ -2,20 +2,22 @@
 include '../config.php'; // Sesuaikan path dengan struktur direktori yang benar
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Ambil nilai dari form
-    $name = isset($_POST['name']) ? $_POST['name'] : '';
-    $address = isset($_POST['address']) ? $_POST['address'] : '';
-    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    // Ambil nilai dari form dengan validasi
+    $name = isset($_POST['name']) ? htmlspecialchars(trim($_POST['name'])) : '';
+    $address = isset($_POST['address']) ? htmlspecialchars(trim($_POST['address'])) : '';
+    $phone = isset($_POST['phone']) ? htmlspecialchars(trim($_POST['phone'])) : '';
+    $email = isset($_POST['email']) ? htmlspecialchars(trim($_POST['email'])) : '';
     $quantity = isset($_POST['quantity']) ? (int)$_POST['quantity'] : 0;
-    $total_price = isset($_POST['harga_1_box_isi_10pcs']) ? ($_POST['harga_1_box_isi_10pcs'] * $quantity) : 0;
-    $order_date = date('Y-m-d'); // Atau dapat juga diambil dari inputan form jika ada
     $product_id = isset($_POST['product_id']) ? (int)$_POST['product_id'] : 0;
-    $kode_invoice = "INV-" . time(); // Contoh kode invoice sederhana
+    $total_price = isset($_POST['harga_1_box_isi_10pcs']) ? ($_POST['harga_1_box_isi_10pcs'] * $quantity) : 0;
+    $order_date = date('Y-m-d');
+    $kode_invoice = "INV-" . time();
 
-    // Cek apakah product_id tidak sama dengan 0
-    if ($product_id == 0) {
-        echo "Error: Produk yang dipilih tidak valid.";
+    // Debugging: Tampilkan nilai product_id
+    echo "Product ID: " . $product_id . "<br>";
+
+    if ($product_id <= 0) {
+        echo "Error: ID produk tidak valid.";
         exit;
     }
 
@@ -27,8 +29,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt_check_product->store_result();
     $stmt_check_product->bind_result($count);
     $stmt_check_product->fetch();
+    $stmt_check_product->close();
 
-    // Jika product_id tidak ditemukan di tabel produk, tampilkan pesan error
+    // Debugging: Tampilkan nilai count
+    echo "Count of products found: " . $count . "<br>";
+
     if ($count == 0) {
         echo "Error: Produk dengan ID $product_id tidak ditemukan.";
         exit;
@@ -36,24 +41,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Query SQL untuk memasukkan data ke tabel pesanan
     $sql = "INSERT INTO pesanan (nama_lengkap, alamat_pengiriman, nomor_telepon, email, jumlah_produk, total_harga, tanggal_pesanan, produk_id, kode_invoice) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-
-    // Persiapkan statement
     $stmt = $conn->prepare($sql);
-
-    // Bind parameter ke statement
     $stmt->bind_param("ssssddsss", $name, $address, $phone, $email, $quantity, $total_price, $order_date, $product_id, $kode_invoice);
 
-    // Eksekusi statement
     if ($stmt->execute()) {
-        echo "Pesanan berhasil disimpan. Kode Invoice: $kode_invoice";
+        echo "Pesanan berhasil disimpan. Kode Invoice: " . htmlspecialchars($kode_invoice);
     } else {
-        echo "Error: " . $sql . "<br>" . $stmt->error;
+        echo "Error: " . $stmt->error;
     }
 
-    // Tutup statement
     $stmt->close();
 }
 
-// Tutup koneksi database
 $conn->close();
 ?>

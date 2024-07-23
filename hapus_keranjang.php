@@ -1,25 +1,19 @@
 <?php
-session_start(); // Memulai sesi PHP
+session_start();
 
-// Memastikan id produk diberikan
-if (isset($_POST['id'])) {
-    $product_id = $_POST['id'];
-
-    // Menghapus produk dari keranjang
-    if (isset($_SESSION['cart'][$product_id])) {
-        unset($_SESSION['cart'][$product_id]);
-    }
-
-    // Menghitung ulang jumlah item dalam keranjang
-    $_SESSION['cart_count'] = array_sum($_SESSION['cart']);
-
-    // Jika keranjang kosong, set jumlah item ke 0
-    if (empty($_SESSION['cart'])) {
-        $_SESSION['cart_count'] = 0;
-    }
+if (!isset($_POST['id']) || !is_numeric($_POST['id'])) {
+    echo "Error: ID produk tidak valid.";
+    exit;
 }
 
-// Redirect kembali ke halaman keranjang
+$product_id = (int)$_POST['id'];
+
+if (isset($_SESSION['cart'][$product_id])) {
+    unset($_SESSION['cart'][$product_id]);
+}
+
+$_SESSION['cart_count'] = array_sum($_SESSION['cart']); // Mengupdate jumlah total produk di keranjang
+
 header("Location: keranjang.php");
-exit();
+exit;
 ?>
