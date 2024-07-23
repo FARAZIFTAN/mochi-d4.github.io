@@ -74,7 +74,6 @@ foreach ($cart as $product_id => $quantity) {
 
     <!-- Main Content -->
     <main>
-        <h1>Keranjang Belanja</h1>
         <div class="cart-container">
             <?php foreach ($cart_items as $item) : ?>
                 <div class="cart-item">
