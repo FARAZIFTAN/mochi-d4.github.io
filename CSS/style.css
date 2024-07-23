@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Font Roboto diterapkan pada seluruh body */
     margin: 0;
     padding: 0;
     background: #f9f9f9;
