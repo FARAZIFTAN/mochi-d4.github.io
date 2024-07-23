@@ -67,7 +67,9 @@ body {
   align-items: center;
 }
 
-.map__container, .inbox__container, .kontak__container {
+.map__container,
+.inbox__container,
+.kontak__container {
   width: 90%;
   max-width: 800px;
   margin-bottom: 20px;
@@ -122,7 +124,7 @@ body {
 }
 
 button[type="submit"] {
-  background-color: #ff69b4; /* Warna button Kirim diubah menjadi #ff69b4 */
+  background-color: #ff69b4;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -133,21 +135,47 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #e60073; /* Warna button saat hover */
+  background-color: #e60073;
 }
 
 .kontak__container {
   width: 100%;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
 
-.kontak__item {
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card-body i {
+  font-size: 30px;
+  color: #ff69b4;
   margin-bottom: 10px;
 }
 
-.kontak__item a {
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  font-size: 16px;
   color: #ff69b4;
   text-decoration: none;
 }
