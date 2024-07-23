@@ -22,6 +22,8 @@ body {
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Font Roboto diterapkan pada navbar */
+
 }
 
 .navbar.scrolled {
