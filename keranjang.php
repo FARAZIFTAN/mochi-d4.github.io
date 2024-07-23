@@ -8,18 +8,30 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 // Mengambil data produk dari database
 $cart_items = [];
 $total_harga = 0;
+
 foreach ($cart as $product_id => $quantity) {
-    $sql = "SELECT * FROM produk WHERE id = $product_id";
-    $result = $conn->query($sql);
+    $sql = "SELECT * FROM produk WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $product_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
     if ($result->num_rows > 0) {
         $product = $result->fetch_assoc();
-        $product['quantity'] = $quantity;
-        $product['harga'] = isset($product['harga']) ? $product['harga'] : 0; // Check if 'harga' exists
-        $product['subtotal'] = $product['harga'] * $quantity;
+        $product['quantity'] = (int)$quantity; // Pastikan kuantitas adalah integer
+
+        // Pastikan harga adalah integer
+        $product['harga'] = isset($product['harga_1_box_isi_10pcs']) ? (int)$product['harga_1_box_isi_10pcs'] : 0;
+
+        // Menghitung subtotal
+        $product['subtotal'] = $product['harga'] * $product['quantity'];
         $total_harga += $product['subtotal'];
         $cart_items[] = $product;
     }
+    $stmt->close(); // Tutup statement setelah digunakan
 }
+
+$conn->close(); // Tutup koneksi setelah selesai
 ?>
 
 <!DOCTYPE html>
@@ -77,9 +89,9 @@ foreach ($cart as $product_id => $quantity) {
         <div class="cart-container">
             <?php foreach ($cart_items as $item) : ?>
                 <div class="cart-item">
-                    <img src="<?php echo $item['gambar']; ?>" alt="<?php echo $item['nama_produk']; ?>">
+                    <img src="<?php echo htmlspecialchars($item['gambar']); ?>" alt="<?php echo htmlspecialchars($item['nama_produk']); ?>">
                     <div class="cart-info">
-                        <h2><?php echo $item['nama_produk']; ?></h2>
+                        <h2><?php echo htmlspecialchars($item['nama_produk']); ?></h2>
                         <p>Jumlah: <?php echo $item['quantity']; ?></p>
                         <p>Harga: Rp <?php echo number_format($item['harga'], 0, ',', '.'); ?></p>
                         <form action="hapus_keranjang.php" method="post">
@@ -95,7 +107,7 @@ foreach ($cart as $product_id => $quantity) {
             Total Harga: Rp <?php echo number_format($total_harga, 0, ',', '.'); ?>
         </div>
 
-        <a href="checkout.php" class="btn">Checkout</a>
+        <a href="detail produk/checkout.php" class="btn">Checkout</a>
     </main>
 
     <footer>
