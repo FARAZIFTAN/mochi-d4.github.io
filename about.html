@@ -1,106 +1,140 @@
+<?php
+include 'config.php'; // Mengimpor file konfigurasi database
+session_start(); // Memulai sesi PHP
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tentang Kami - Website Mochi</title>
-    <link rel="stylesheet" href="CSS/style_about.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
+    <title>About Us - Website Mochi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
     <!-- Navbar -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <img src="img/logo.png" alt="Logo" />
+    <nav class="bg-gradient-to-r from-pink-600 to-pink-400 text-white shadow-lg fixed w-full top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="flex items-center">
+                <img src="img/logo.png" class="h-12" alt="Logo" />
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.php" class="hover:text-gray-200 transition">Home</a>
+                <a href="produk.php" class="hover:text-gray-200 transition">Product</a>
+                <a href="about.html" class="hover:text-gray-200 transition">About</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="keranjang.php" class="relative">
+                    <i class="fas fa-shopping-cart text-xl"></i>
+                    <span class="absolute top-0 right-0 -translate-x-1/2 translate-y-1/2 bg-red-600 text-white text-xs rounded-full px-2 py-1">
+                        <?php echo isset($_SESSION['cart_count']) ? $_SESSION['cart_count'] : 0; ?>
+                    </span>
+                </a>
+                <a href="proses_logout.php" class="text-xl hover:text-gray-200 transition">
+                    <i class="fas fa-sign-out-alt"></i>
+                </a>
+                <button class="md:hidden text-xl" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-        <div class="nav-links" id="nav-links">
-          <ul>
-            <li><a href="index.php">Home</a></li>
-            <li><a href="produk.php">Product</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu fixed inset-0 bg-white shadow-md z-40 hidden" id="mobile-menu">
+            <div class="flex justify-end p-4">
+                <button class="text-gray-600 text-xl" id="close-menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center space-y-4 mt-8">
+                <a href="index.php" class="text-lg text-pink-600 hover:text-pink-800 transition">Home</a>
+                <a href="produk.php" class="text-lg text-pink-600 hover:text-pink-800 transition">Product</a>
+                <a href="about.html" class="text-lg text-pink-600 hover:text-pink-800 transition">About</a>
+            </div>
         </div>
-        <div class="nav-actions">
-          <a href="proses_logout.php" class="logout-btn">
-            <i class="fas fa-sign-out-alt"></i>
-          </a>
-          <button class="hamburger" id="hamburger">
-            <i class="fas fa-bars"></i>
-          </button>
-        </div>
-      </div>
     </nav>
 
     <!-- Main Content -->
-    <div class="content">
-      <h1>Tentang Kami</h1>
-      <div class="content-section">
-        <p>
-          Mochi adalah kue tradisional Jepang yang terbuat dari beras ketan yang
-          ditumbuk hingga menjadi adonan lengket dan kenyal. Teksturnya yang
-          lembut dan elastis membuatnya unik dan disukai banyak orang. Mochi
-          sering diisi dengan berbagai macam bahan, seperti pasta kacang merah,
-          es krim, atau buah-buahan, sehingga menciptakan variasi rasa yang
-          beragam.
-        </p>
-        <img src="img/daifuku.jpeg" alt="Tentang Kami" class="about-img" />
-      </div>
-      <h2>Visi Kami</h2>
-      <p>
-        Menjadi pemimpin dalam industri mochi dengan mengutamakan kualitas, rasa
-        dan inovasi.
-      </p>
-      <h2>Misi Kami</h2>
-      <p>Menyediakan mochi terbaik dengan layanan pelanggan yang unggul.</p>
-    </div>
+    <main class="pt-16">
+        <!-- About Us Section -->
+        <section class="container mx-auto px-4 py-12">
+            <h1 class="text-3xl font-bold text-center mb-8">About Us</h1>
+            <div class="flex flex-col md:flex-row md:space-x-8">
+                <!-- Company Info -->
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-2xl font-semibold mb-4">Our Story</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                        Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper auctor.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Morbi nec augue sed arcu venenatis convallis. Duis vulputate arcu quis lectus malesuada, nec fermentum nulla aliquet. 
+                        Nullam auctor nunc vitae ipsum fringilla, eu aliquet sapien tincidunt.
+                    </p>
+                </div>
+                <!-- Mission & Vision -->
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-semibold mb-4">Our Mission & Vision</h2>
+                    <div class="bg-white shadow-lg rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-semibold mb-2">Mission</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+                        </p>
+                    </div>
+                    <div class="bg-white shadow-lg rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-2">Vision</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper auctor. Morbi nec augue sed arcu venenatis convallis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="container mx-auto px-4 py-12 bg-gray-100">
+            <h2 class="text-2xl font-bold text-center mb-8">Meet Our Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                    <img src="img/team1.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+                    <p class="text-gray-600">CEO & Founder</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                    <img src="img/team2.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Jane Smith</h3>
+                    <p class="text-gray-600">Chief Marketing Officer</p>
+                </div>
+                <div class="bg-white shadow-lg rounded-lg p-6 text-center">
+                    <img src="img/team3.jpg" alt="Team Member" class="w-32 h-32 mx-auto rounded-full mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Alice Johnson</h3>
+                    <p class="text-gray-600">Head of Product Development</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-      <p>&copy; 2024 Toko Online. Hak cipta dilindungi. /></p>
+    <footer class="bg-gradient-to-r from-pink-600 to-pink-400 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Toko Online. Hak cipta dilindungi.</p>
+        </div>
     </footer>
 
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
         // JavaScript for Navbar Toggle
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("nav-links");
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
 
-        hamburger.addEventListener("click", () => {
-          navLinks.classList.toggle("show");
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // JavaScript for Scroll Effect
-        window.addEventListener("scroll", () => {
-          const navbar = document.querySelector(".navbar");
-          if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-          } else {
-            navbar.classList.remove("scrolled");
-          }
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
         });
-
-        // JavaScript for Reveal Animation
-        const revealElements = document.querySelectorAll(".reveal");
-        const revealOnScroll = () => {
-          const windowHeight = window.innerHeight;
-          revealElements.forEach((element) => {
-            const elementTop = element.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 50) {
-              element.classList.add("active");
-            } else {
-              element.classList.remove("active");
-            }
-          });
-        };
-
-        window.addEventListener("scroll", revealOnScroll);
-        revealOnScroll(); // Initial call to reveal elements on page load
-      });
     </script>
-  </body>
+</body>
 </html>
